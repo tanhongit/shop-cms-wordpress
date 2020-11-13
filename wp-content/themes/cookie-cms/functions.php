@@ -67,7 +67,7 @@ if (!function_exists('tnt_theme_setup')) {
         /*
         * Tạo menu cho theme
         */
-        register_nav_menu('primary-menu', __('Main Menu', 'tnt_team')); //textdomain dùn để dịch
+        register_nav_menu('main-menu', __('Main Menu', 'tnt_team')); //textdomain dùn để dịch
 
         /*
         * Tạo sidebar cho theme
@@ -123,3 +123,19 @@ if (!function_exists('tnt_logo')) {
 // %1$s: get_bloginfo( ‘url’ )
 // %2$s: get_bloginfo( ‘description’ )
 // %3$s: get_bloginfo( ‘sitename’ )
+
+/*
+@ Thiết lập hàm hiển thị menu
+@ tnt_menu( $slug )
+*/
+if (!function_exists('tnt_menu')) {
+    function tnt_menu($slug)
+    {
+        $menu = array(
+            'theme_location' => $slug,
+            'container' => 'nav',
+            'container_class' => $slug,
+        );
+        wp_nav_menu($menu);
+    }
+}
