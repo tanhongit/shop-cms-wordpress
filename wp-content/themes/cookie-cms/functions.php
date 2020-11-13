@@ -84,3 +84,42 @@ if (!function_exists('tnt_theme_setup')) {
     }
     add_action('init', 'tnt_theme_setup');
 }
+
+// --------------------------------------------------------------------------------------------------
+//  Header
+// ==================================
+/*
+@ Thiết lập hàm hiển thị logo
+@ tnt_logo()
+*/
+if (!function_exists('tnt_logo')) {
+    function tnt_logo()
+    { ?>
+        <div class="logo">
+
+            <div class="site-name">
+                <?php if (is_home()) {
+                    printf(
+                        '<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
+                        get_bloginfo('url'),
+                        get_bloginfo('description'),
+                        get_bloginfo('sitename')
+                    );
+                } else {
+                    printf(
+                        '<p><a href="%1$s" title="%2$s">%3$s</a></p>',
+                        get_bloginfo('url'),
+                        get_bloginfo('description'),
+                        get_bloginfo('sitename')
+                    );
+                } // endif 
+                ?>
+            </div>
+            <div class="site-description"><?php bloginfo('description'); ?></div>
+
+        </div>
+<?php }
+}
+// %1$s: get_bloginfo( ‘url’ )
+// %2$s: get_bloginfo( ‘description’ )
+// %3$s: get_bloginfo( ‘sitename’ )
