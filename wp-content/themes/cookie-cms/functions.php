@@ -67,7 +67,7 @@ if (!function_exists('tnt_theme_setup')) {
         /*
         * Tạo menu cho theme
         */
-        register_nav_menu('primary-menu', __('Main Menu', 'tnt_team')); //textdomain dùn để dịch
+        register_nav_menu('main-menu', __('Main Menu', 'tnt_team')); //textdomain dùn để dịch
 
         /*
         * Tạo sidebar cho theme
@@ -83,4 +83,59 @@ if (!function_exists('tnt_theme_setup')) {
         register_sidebar($sidebar);
     }
     add_action('init', 'tnt_theme_setup');
+}
+
+// --------------------------------------------------------------------------------------------------
+//  Header
+// ==================================
+/*
+@ Thiết lập hàm hiển thị logo
+@ tnt_logo()
+*/
+if (!function_exists('tnt_logo')) {
+    function tnt_logo()
+    { ?>
+        <div class="logo">
+
+            <div class="site-name">
+                <?php if (is_home()) {
+                    printf(
+                        '<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
+                        get_bloginfo('url'),
+                        get_bloginfo('description'),
+                        get_bloginfo('sitename')
+                    );
+                } else {
+                    printf(
+                        '<p><a href="%1$s" title="%2$s">%3$s</a></p>',
+                        get_bloginfo('url'),
+                        get_bloginfo('description'),
+                        get_bloginfo('sitename')
+                    );
+                } // endif 
+                ?>
+            </div>
+            <div class="site-description"><?php bloginfo('description'); ?></div>
+
+        </div>
+<?php }
+}
+// %1$s: get_bloginfo( ‘url’ )
+// %2$s: get_bloginfo( ‘description’ )
+// %3$s: get_bloginfo( ‘sitename’ )
+
+/*
+@ Thiết lập hàm hiển thị menu
+@ tnt_menu( $slug )
+*/
+if (!function_exists('tnt_menu')) {
+    function tnt_menu($slug)
+    {
+        $menu = array(
+            'theme_location' => $slug,
+            'container' => 'nav',
+            'container_class' => $slug,
+        );
+        wp_nav_menu($menu);
+    }
 }
