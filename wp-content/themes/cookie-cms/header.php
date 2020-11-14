@@ -22,7 +22,6 @@
 <!--Thêm class tượng trưng cho mỗi trang lên <body> để tùy biến-->
 
 <body <?php body_class(); ?>>
-    <!-- <?php tnt_logo(); ?> -->
     <header id="header" class="header-area header-sticky">
         <div class="header-container">
             <div class="row">
@@ -33,7 +32,7 @@
                 </div>
                 <div class="col-lg-2 col-sm-4">
                     <div class="logo text-center">
-                        <a href="index.html"><img src="<?= get_template_directory_uri() ?>/assets/img/logo/logo.png" alt="NatureCircle"></a>
+                        <?php the_custom_logo(); ?>
                     </div>
                 </div>
                 <div class="col-lg-5 col-sm-8">

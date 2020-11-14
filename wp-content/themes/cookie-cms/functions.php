@@ -106,34 +106,46 @@ if (!function_exists('tnt_theme_setup')) {
 if (!function_exists('tnt_logo')) {
     function tnt_logo()
     { ?>
-        <div class="logo">
-
-            <div class="site-name">
-                <?php if (is_home()) {
-                    printf(
-                        '<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
-                        get_bloginfo('url'),
-                        get_bloginfo('description'),
-                        get_bloginfo('sitename')
-                    );
-                } else {
-                    printf(
-                        '<p><a href="%1$s" title="%2$s">%3$s</a></p>',
-                        get_bloginfo('url'),
-                        get_bloginfo('description'),
-                        get_bloginfo('sitename')
-                    );
-                } // endif 
-                ?>
-            </div>
-            <div class="site-description"><?php bloginfo('description'); ?></div>
-
+        <div class="logo text-center">
+            <?php if (is_home()) {
+                printf(
+                    '<h1><a href="%1$s" title="%2$s">%3$s</a></h1>',
+                    get_bloginfo('url'),
+                    get_bloginfo('description'),
+                    get_bloginfo('sitename')
+                );
+            } else {
+                printf(
+                    '<p><a href="%1$s" title="%2$s">%3$s</a></p>',
+                    get_bloginfo('url'),
+                    get_bloginfo('description'),
+                    get_bloginfo('sitename')
+                );
+            } // endif 
+            ?>
+            <p class="site-description"><?php bloginfo('description'); ?></p>
         </div>
 <?php }
 }
 // %1$s: get_bloginfo( ‘url’ )
 // %2$s: get_bloginfo( ‘description’ )
 // %3$s: get_bloginfo( ‘sitename’ )
+function themename_custom_logo_setup()
+{
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array('site-title', 'site-description'),
+        'unlink-homepage-logo' => true,
+    );
+    add_theme_support('custom-logo', $defaults);
+}
+
+if (!function_exists('the_custom_logo')) {
+    the_custom_logo();
+}
 
 /*
 @ Thiết lập hàm hiển thị menu
