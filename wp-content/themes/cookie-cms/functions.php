@@ -38,9 +38,20 @@ if (!function_exists('tnt_theme_setup')) {
         add_theme_support('post-thumbnails');
 
         /*
-        hêm chức năng title-tag để tự thêm <title>
+        * thêm chức năng title-tag để tự thêm <title>
         */
         add_theme_support('title-tag');
+
+        /* 
+        * thêm chức năng custom logo
+        */
+        add_theme_support('custom-logo');
+
+        /* 
+        * thêm chức năng custom header
+        */
+        add_theme_support('custom-header');
+
 
         /*
         * Thêm chức năng post format: tùy biến việc hiển thị post theo các định dạng

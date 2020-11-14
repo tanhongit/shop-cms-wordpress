@@ -84,7 +84,7 @@
                     </div>
                     <div class="col-lg-2 col-sm-4">
                         <div class="logo text-center">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="NatureCircle"></a>
+                            <a href="index.html"><img src="<?= get_template_directory_uri() ?>/assets/img/logo/logo.png" alt="NatureCircle"></a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-sm-8">
