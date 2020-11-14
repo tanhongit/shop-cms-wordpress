@@ -226,4 +226,6 @@
                 </div>
             </div>
             <!--End of Register Form-->
+
         </header>
+    </div>
