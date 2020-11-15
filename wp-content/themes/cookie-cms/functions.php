@@ -6,6 +6,7 @@
 */
 define('THEME_URL', get_stylesheet_directory());
 define('CORE', THEME_URL . '/core');
+define('GET_TEMP_URL', get_template_directory_uri());
 
 require_once(CORE . '/init.php');
 

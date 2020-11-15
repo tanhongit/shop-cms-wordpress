@@ -7,12 +7,12 @@
     <link rel="profile" href="http://gmgp.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/ie7.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/plugins.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/style.css">
-    <script src="<?= get_template_directory_uri() ?>/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/ie7.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/plugins.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/style.css">
+    <script src="<?= GET_TEMP_URL ?>/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 
     <!--hook này để giúp WordPress hiểu được đây là khu vực thẻ <head>-->
     <?php wp_head(); ?>
