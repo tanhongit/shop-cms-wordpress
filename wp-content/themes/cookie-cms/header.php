@@ -153,18 +153,10 @@
                     <div class="modal-body">
                         <div class="form-pop-up-content">
                             <h2>Sign Up</h2>
-                            <form action="#" method="post">
+                            <form action="/wp-login.php?action=register" method="post">
                                 <div class="form-box">
-                                    <input type="text" placeholder="Full Name" name="fullname">
-                                    <input type="text" placeholder="User Name" name="username">
-                                    <input type="email" placeholder="Email" name="email">
-                                    <input type="password" placeholder="Password" name="pass">
-                                    <input type="password" placeholder="Confirm Password" name="re_pass">
-                                </div>
-                                <div class="checkobx-link">
-                                    <div class="left-col">
-                                        <input type="checkbox" id="remember_reg"><label for="remember_reg">Remember Me</label>
-                                    </div>
+                                    <input type="text" placeholder="User Name" name="user_login" id="user_login">
+                                    <input type="email" placeholder="Email" name="user_email" id="user_email">
                                 </div>
                                 <button class="text-uppercase" type="submit">Register</button>
                             </form>
