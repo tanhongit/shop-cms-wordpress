@@ -38,7 +38,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-service">
                                     <div class="service-image">
-                                        <img src="<?= get_template_directory_uri() ?>/assets/img/icon/rocket.png" alt="">
+                                        <img src="<?= GET_TEMP_URL ?>/assets/img/icon/rocket.png" alt="">
                                     </div>
                                     <div class="service-text">
                                         <h3>Free delivery</h3>
@@ -49,7 +49,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-service">
                                     <div class="service-image">
-                                        <img src="<?= get_template_directory_uri() ?>/assets/img/icon/money.png" alt="">
+                                        <img src="<?= GET_TEMP_URL ?>/assets/img/icon/money.png" alt="">
                                     </div>
                                     <div class="service-text">
                                         <h3>Money guarantee</h3>
@@ -60,7 +60,7 @@
                             <div class="col-lg-4 col-md-4">
                                 <div class="single-service">
                                     <div class="service-image">
-                                        <img src="<?= get_template_directory_uri() ?>/assets/img/icon/support.png" alt="">
+                                        <img src="<?= GET_TEMP_URL ?>/assets/img/icon/support.png" alt="">
                                     </div>
                                     <div class="service-text">
                                         <h3>Online support</h3>
@@ -125,12 +125,12 @@
             <div class="row">
                 <div class="col-lg-6 d-flex col-md-6">
                     <div class="footer-text-bottom">
-                        <p>Copyright &copy; <a href="#">Naturecircle</a>. All Rights Reserved</p>
+                        <p>Copyright &copy; <a href="#">Team TNT</a>. All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="payment-img d-flex justify-content-end">
-                        <img src="<?= get_template_directory_uri() ?>/assets/img/payment.png" alt="">
+                        <img src="<?= GET_TEMP_URL ?>/assets/img/payment.png" alt="">
                     </div>
                 </div>
             </div>
@@ -141,12 +141,12 @@
 <!-- Footer Area End -->
 
 <!-- All js here -->
-<script src="<?= get_template_directory_uri() ?>/assets/js/vendor/jquery-3.2.1.min.js"></script>
-<script src="<?= get_template_directory_uri() ?>/assets/js/popper.min.js"></script>
-<script src="<?= get_template_directory_uri() ?>/assets/js/bootstrap.min.js"></script>
-<script src="<?= get_template_directory_uri() ?>/assets/js/plugins.js"></script>
-<script src="<?= get_template_directory_uri() ?>/assets/js/ajax-mail.js"></script>
-<script src="<?= get_template_directory_uri() ?>/assets/js/main.js"></script>
+<script src="<?= GET_TEMP_URL ?>/assets/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="<?= GET_TEMP_URL ?>/assets/js/popper.min.js"></script>
+<script src="<?= GET_TEMP_URL ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?= GET_TEMP_URL ?>/assets/js/plugins.js"></script>
+<script src="<?= GET_TEMP_URL ?>/assets/js/ajax-mail.js"></script>
+<script src="<?= GET_TEMP_URL ?>/assets/js/main.js"></script>
 
 </body>
 

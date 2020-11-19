@@ -7,12 +7,12 @@
     <link rel="profile" href="http://gmgp.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/ie7.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/plugins.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/style.css">
-    <script src="<?= get_template_directory_uri() ?>/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/ie7.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/plugins.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/style.css">
+    <script src="<?= GET_TEMP_URL ?>/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 
     <!--hook này để giúp WordPress hiểu được đây là khu vực thẻ <head>-->
     <?php wp_head(); ?>
@@ -124,16 +124,16 @@
                     <div class="modal-body">
                         <div class="form-pop-up-content">
                             <h2>Login to your account</h2>
-                            <form action="#" method="post">
+                            <form action="<?= home_url(); ?>/wp-login.php" method="post">
                                 <div class="form-box">
-                                    <input type="text" placeholder="User Name" name="username">
-                                    <input type="password" placeholder="Password" name="pass">
+                                    <input type="text" name="log" id="user_login" aria-describedby="login_error" class="input" value="" size="20" autocapitalize="off">
+                                    <input type="password" name="pwd" id="user_pass" aria-describedby="login_error" class="input password-input" value="" size="20">
                                 </div>
                                 <div class="checkobx-link">
-                                    <div class="left-col">
-                                        <input type="checkbox" id="remember_me"><label for="remember_me">Remember Me</label>
+                                    <div class="left-col forgetmenot">
+                                        <input name="rememberme" type="checkbox" id="rememberme" value="forever"><label for="rememberme">Remember Me</label>
                                     </div>
-                                    <div class="right-col"><a href="#">Forget Password?</a></div>
+                                    <div class="right-col"><a href="<?= home_url(); ?>/wp-login.php?action=lostpassword">Forget Password?</a></div>
                                 </div>
                                 <button type="submit">Sign In</button>
                             </form>
@@ -155,10 +155,10 @@
                             <h2>Sign Up</h2>
                             <form action="/wp-login.php?action=register" method="post">
                                 <div class="form-box">
-                                    <input type="text" placeholder="User Name" name="user_login" id="user_login">
-                                    <input type="email" placeholder="Email" name="user_email" id="user_email">
+                                    <input type="text" name="user_login" id="user_login" class="input" value="" size="20" autocapitalize="off">
+                                    <input type="email" placeholder="Email" name="user_email" id="user_email" class="input" value="">
                                 </div>
-                                <button class="text-uppercase" type="submit">Register</button>
+                                <button class="text-uppercase" type="submit" name="wp-submit" id="wp-submit">Register</button>
                             </form>
                         </div>
                     </div>
