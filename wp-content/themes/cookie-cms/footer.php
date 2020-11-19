@@ -125,7 +125,7 @@
             <div class="row">
                 <div class="col-lg-6 d-flex col-md-6">
                     <div class="footer-text-bottom">
-                        <p>Copyright &copy; <a href="#">Naturecircle</a>. All Rights Reserved</p>
+                        <p>Copyright &copy; <a href="#">Team TNT</a>. All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
