@@ -126,8 +126,8 @@
                             <h2>Login to your account</h2>
                             <form action="<?= home_url(); ?>/wp-login.php" method="post">
                                 <div class="form-box">
-                                    <input type="text" name="log" id="user_login" aria-describedby="login_error" class="input" value="" size="20" autocapitalize="off">
-                                    <input type="password" name="pwd" id="user_pass" aria-describedby="login_error" class="input password-input" value="" size="20">
+                                    <input type="text" name="log" placeholder="username/email" id="user_login" aria-describedby="login_error" class="input" value="" size="20" autocapitalize="off">
+                                    <input type="password" placeholder="password" name="pwd" id="user_pass" aria-describedby="login_error" class="input password-input" value="" size="20">
                                 </div>
                                 <div class="checkobx-link">
                                     <div class="left-col forgetmenot">
@@ -155,7 +155,7 @@
                             <h2>Sign Up</h2>
                             <form action="/wp-login.php?action=register" method="post">
                                 <div class="form-box">
-                                    <input type="text" name="user_login" id="user_login" class="input" value="" size="20" autocapitalize="off">
+                                    <input type="text"  placeholder="Username" name="user_login" id="user_login" class="input" value="" size="20" autocapitalize="off">
                                     <input type="email" placeholder="Email" name="user_email" id="user_email" class="input" value="">
                                 </div>
                                 <button class="text-uppercase" type="submit" name="wp-submit" id="wp-submit">Register</button>

@@ -94,6 +94,7 @@ if (!function_exists('tnt_theme_setup')) {
         );
         register_sidebar($sidebar);
 
+        //widgets for footer
         register_sidebar(array(
             'name' => 'Footer Sidebar 1',
             'id' => 'footer-sidebar-1',
