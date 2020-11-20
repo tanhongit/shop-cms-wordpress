@@ -55,7 +55,14 @@
                         <div class="single-footer-widget">
                             <?php
                             if (is_active_sidebar('footer-sidebar-1')) {
+                                ob_start();
                                 dynamic_sidebar('footer-sidebar-1');
+                                $sidebar = ob_get_contents();
+                                ob_end_clean();
+                            
+                                $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
+                            
+                                echo $sidebar_corrected_ul;
                             }
                             ?>
                         </div>
@@ -64,7 +71,14 @@
                         <div class="single-footer-widget">
                             <?php
                             if (is_active_sidebar('footer-sidebar-2')) {
+                                ob_start();
                                 dynamic_sidebar('footer-sidebar-2');
+                                $sidebar = ob_get_contents();
+                                ob_end_clean();
+                            
+                                $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
+                            
+                                echo $sidebar_corrected_ul;
                             }
                             ?>
                         </div>
@@ -73,7 +87,14 @@
                         <div class="single-footer-widget">
                             <?php
                             if (is_active_sidebar('footer-sidebar-3')) {
+                                ob_start();
                                 dynamic_sidebar('footer-sidebar-3');
+                                $sidebar = ob_get_contents();
+                                ob_end_clean();
+                            
+                                $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
+                            
+                                echo $sidebar_corrected_ul;
                             }
                             ?>
                         </div>
@@ -82,7 +103,14 @@
                         <div class="single-footer-widget">
                             <?php
                             if (is_active_sidebar('footer-sidebar-4')) {
+                                ob_start();
                                 dynamic_sidebar('footer-sidebar-4');
+                                $sidebar = ob_get_contents();
+                                ob_end_clean();
+                            
+                                $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
+                            
+                                echo $sidebar_corrected_ul;
                             } ?>
                         </div>
                     </div>
