@@ -8,6 +8,7 @@ define('THEME_URL', get_stylesheet_directory());
 define('CORE', THEME_URL . '/core');
 define('GET_TEMP_URL', get_template_directory_uri());
 define('GO_TO_HOME', home_url());
+
 require_once(CORE . '/init.php');
 
 // @ Thiết lập $content_width để khai báo kích thước chiều rộng của nội dung

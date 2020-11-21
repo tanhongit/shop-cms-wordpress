@@ -59,9 +59,9 @@
                                 dynamic_sidebar('footer-sidebar-1');
                                 $sidebar = ob_get_contents();
                                 ob_end_clean();
-                            
+
                                 $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
-                            
+
                                 echo $sidebar_corrected_ul;
                             }
                             ?>
@@ -75,9 +75,9 @@
                                 dynamic_sidebar('footer-sidebar-2');
                                 $sidebar = ob_get_contents();
                                 ob_end_clean();
-                            
+
                                 $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
-                            
+
                                 echo $sidebar_corrected_ul;
                             }
                             ?>
@@ -91,9 +91,9 @@
                                 dynamic_sidebar('footer-sidebar-3');
                                 $sidebar = ob_get_contents();
                                 ob_end_clean();
-                            
+
                                 $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
-                            
+
                                 echo $sidebar_corrected_ul;
                             }
                             ?>
@@ -107,9 +107,9 @@
                                 dynamic_sidebar('footer-sidebar-4');
                                 $sidebar = ob_get_contents();
                                 ob_end_clean();
-                            
+
                                 $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
-                            
+
                                 echo $sidebar_corrected_ul;
                             } ?>
                         </div>
@@ -126,7 +126,7 @@
             <div class="row">
                 <div class="col-lg-6 d-flex col-md-6">
                     <div class="footer-text-bottom">
-                        <p>Copyright &copy; <a href="#">Team TNT</a>. All Rights Reserved</p>
+                        <p>Copyright &copy; <a href="<?= GO_TO_HOME ?>">Team TNT</a>. All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

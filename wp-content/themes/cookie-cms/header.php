@@ -124,7 +124,7 @@
                     <div class="modal-body">
                         <div class="form-pop-up-content">
                             <h2>Login to your account</h2>
-                            <form action="<?= home_url(); ?>/wp-login.php" method="post">
+                            <form action="<?= GO_TO_HOME ?>/wp-login.php" method="post">
                                 <div class="form-box">
                                     <input type="text" name="log" placeholder="username/email" id="user_login" aria-describedby="login_error" class="input" value="" size="20" autocapitalize="off">
                                     <input type="password" placeholder="password" name="pwd" id="user_pass" aria-describedby="login_error" class="input password-input" value="" size="20">
@@ -133,7 +133,7 @@
                                     <div class="left-col forgetmenot">
                                         <input name="rememberme" type="checkbox" id="rememberme" value="forever"><label for="rememberme">Remember Me</label>
                                     </div>
-                                    <div class="right-col"><a href="<?= home_url(); ?>/wp-login.php?action=lostpassword">Forget Password?</a></div>
+                                    <div class="right-col"><a href="<?= GO_TO_HOME ?>/wp-login.php?action=lostpassword">Forget Password?</a></div>
                                 </div>
                                 <button type="submit">Sign In</button>
                             </form>
@@ -153,7 +153,7 @@
                     <div class="modal-body">
                         <div class="form-pop-up-content">
                             <h2>Sign Up</h2>
-                            <form action="/wp-login.php?action=register" method="post">
+                            <form action="<?= GO_TO_HOME ?>/wp-login.php?action=register" method="post">
                                 <div class="form-box">
                                     <input type="text"  placeholder="Username" name="user_login" id="user_login" class="input" value="" size="20" autocapitalize="off">
                                     <input type="email" placeholder="Email" name="user_email" id="user_email" class="input" value="">
