@@ -33,8 +33,8 @@
                 <tbody>
                     <tr>
                         <td class="table-remove"><button><i class="fa fa-trash"></i></button></td>
-                        <td class="table-image"><a href="product-details.html"><img src="assets/img/product/3.jpg" alt=""></a></td>
-                        <td class="table-p-name"><a href="product-details.html">Habitasse dictumst</a></td>
+                        <td class="table-image"><a href="product-details.html"><img src="<?= GO_TO_HOME ?>/wp-content/uploads/2020/11/06_de9a3fb951884589a7de023a8f500870_grande-150x150.jpg" alt=""></a></td>
+                        <td class="table-p-name"><a href="product-details.html">Test product 1</a></td>
                         <td class="table-p-price">
                             <p>$65.00</p>
                         </td>
@@ -45,8 +45,8 @@
                     </tr>
                     <tr>
                         <td class="table-remove"><button><i class="fa fa-trash"></i></button></td>
-                        <td class="table-image"><a href="product-details.html"><img src="assets/img/product/4.jpg" alt=""></a></td>
-                        <td class="table-p-name"><a href="product-details.html">Kaoreet lobortis</a></td>
+                        <td class="table-image"><a href="product-details.html"><img src="<?= GO_TO_HOME ?>/wp-content/uploads/2020/11/4183c5944997aff7042e20d3ad7f4124-150x150.jpg" alt=""></a></td>
+                        <td class="table-p-name"><a href="product-details.html">Test product 2</a></td>
                         <td class="table-p-price">
                             <p>$95.00</p>
                         </td>
