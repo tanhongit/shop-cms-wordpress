@@ -22,6 +22,7 @@
 <!--Thêm class tượng trưng cho mỗi trang lên <body> để tùy biến-->
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <header id="header" class="header-area header-sticky">
         <div class="header-container">
             <div class="row">
@@ -155,7 +156,7 @@
                             <h2>Sign Up</h2>
                             <form action="<?= GO_TO_HOME ?>/wp-login.php?action=register" method="post">
                                 <div class="form-box">
-                                    <input type="text"  placeholder="Username" name="user_login" id="user_login" class="input" value="" size="20" autocapitalize="off">
+                                    <input type="text" placeholder="Username" name="user_login" id="user_login" class="input" value="" size="20" autocapitalize="off">
                                     <input type="email" placeholder="Email" name="user_email" id="user_email" class="input" value="">
                                 </div>
                                 <button class="text-uppercase" type="submit" name="wp-submit" id="wp-submit">Register</button>
