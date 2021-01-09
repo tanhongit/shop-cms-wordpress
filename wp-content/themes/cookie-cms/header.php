@@ -40,10 +40,7 @@
                     <div class="header-content d-flex justify-content-end">
                         <div class="search-wrapper">
                             <a href="#"><span class="icon icon-Search"></span></a>
-                            <form action="#" class="search-form">
-                                <input type="text" placeholder="Search entire store here ...">
-                                <button type="button">Search</button>
-                            </form>
+                            <?= search_product_form(true) ?>
                         </div>
                         <div class="settings-wrapper">
                             <a href="#"><i class="icon icon-Settings"></i></a>

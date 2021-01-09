@@ -218,3 +218,32 @@ function tnt_styles()
     wp_enqueue_style('main-style');
 }
 add_action('wp_enqueue_scripts', 'tnt_styles');
+
+
+/*
+@ Thiết lập hàm hiển thị thanh search
+*/
+function search_product_form($echo = true){
+    global $product_search_form_index;
+
+    ob_start();
+
+    if ( empty( $product_search_form_index ) ) {
+        $product_search_form_index = 0;
+    }
+
+    do_action( 'pre_search_product_form' );
+
+    wc_get_template(
+        'searchform.php',
+        array(
+            'index' => $product_search_form_index++,
+        )
+    );
+    $form = apply_filters( 'search_product_form', ob_get_clean() );
+
+    if ( ! $echo ) {
+        return $form;
+    }
+    echo $form;
+}
