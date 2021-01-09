@@ -82,6 +82,26 @@ if (!function_exists('tnt_theme_setup')) {
         */
         register_nav_menu('main-menu', __('Main Menu', 'tnt_team')); //textdomain dùn để dịch
 
+        //widgets slider for banner after header
+        register_sidebar(array(
+            'name' => 'Hero Area',
+            'id' => 'banner-slider-1',
+            'description' => 'Hero Area Start - Appears after the header area',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+        register_sidebar(array(
+            'name' => 'Banner Four Area',
+            'id' => 'area-2',
+            'description' => 'Banner Four Area - Appears after the Hero Area',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+
         /*
         * Tạo sidebar cho theme
         */
@@ -90,7 +110,7 @@ if (!function_exists('tnt_theme_setup')) {
             'id' => 'main-sidebar',
             'description' => 'Main sidebar for TNT TEAM theme',
             'class' => 'main-sidebar',
-            'before_title' => '<h3 class="widgettitle">',
+            'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>'
         );
         register_sidebar($sidebar);
