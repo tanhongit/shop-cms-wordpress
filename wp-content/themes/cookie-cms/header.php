@@ -45,10 +45,16 @@
                         <div class="settings-wrapper">
                             <a href="#"><i class="icon icon-Settings"></i></a>
                             <div class="settings-content">
-                                <h4>My Account <i class="fa fa-angle-down"></i></h4>
+                                <h4>My Account </h4>
                                 <ul>
-                                    <li><a href="/wp-login.php?action=register" class="modal-view button" data-toggle="modal" data-target="#register_box">Register</a></li>
-                                    <li><a href="/admin" class="modal-view button" data-toggle="modal" data-target="#login_box">login</a></li>
+                                    <?php if (is_user_logged_in()) : ?>
+                                        <li><a href="#" class="modal-view button"><?= show_fullname_curent_user() ?></a></li>
+                                        <hr>
+                                        <li><a href="<?= GO_TO_HOME ?>/wp-login.php?action=logout" class="modal-view button">Logout</a></li>
+                                    <?php else : ?>
+                                        <li><a href="/wp-login.php?action=register" class="modal-view button" data-toggle="modal" data-target="#register_box">Register</a></li>
+                                        <li><a href="/admin" class="modal-view button" data-toggle="modal" data-target="#login_box">Login</a></li>
+                                    <?php endif ?>
                                 </ul>
                             </div>
                         </div>

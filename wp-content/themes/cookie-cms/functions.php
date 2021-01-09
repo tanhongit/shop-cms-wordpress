@@ -223,16 +223,17 @@ add_action('wp_enqueue_scripts', 'tnt_styles');
 /*
 @ Thiết lập hàm hiển thị thanh search
 */
-function search_product_form($echo = true){
+function search_product_form($echo = true)
+{
     global $product_search_form_index;
 
     ob_start();
 
-    if ( empty( $product_search_form_index ) ) {
+    if (empty($product_search_form_index)) {
         $product_search_form_index = 0;
     }
 
-    do_action( 'pre_search_product_form' );
+    do_action('pre_search_product_form');
 
     wc_get_template(
         'searchform.php',
@@ -240,10 +241,25 @@ function search_product_form($echo = true){
             'index' => $product_search_form_index++,
         )
     );
-    $form = apply_filters( 'search_product_form', ob_get_clean() );
+    $form = apply_filters('search_product_form', ob_get_clean());
 
-    if ( ! $echo ) {
+    if (!$echo) {
         return $form;
     }
     echo $form;
+}
+
+/*
+@ Hiện tên người dùng ra giao diện
+*/
+function show_fullname_curent_user()
+{
+    if (is_user_logged_in()) {
+        $user = wp_get_current_user();
+        empty($user->user_firstname) && empty($user->user_lastname) ? $response =  $user->display_name :
+            $response = $user->user_firstname . " " .  $user->user_lastname; // or user_login , user_firstname, user_lastname, display_name
+    } else {
+        $response = ``;
+    }
+    return $response;
 }
