@@ -206,7 +206,7 @@ if (!function_exists('tnt_menu')) {
 
 /*
 @ Chèn CSS và Javascript vào theme
-@ sử dụng hook wp_enqueue_scripts() để hiển thị nó ra ngoài front-end
+@ sử dụng hook wp_enqueue_scripts() để yêu cầu load hiển thị nó ra ngoài front-end
 */
 function tnt_styles()
 {
