@@ -7,3 +7,7 @@ Wordpress How to add class to <ul> of sidebar widget: https://stackoverflow.com/
 -----------------------------
 
 show display name after login wordpress: https://wordpress.stackexchange.com/questions/282389/display-username-as-parent-menu-item/282391#282391
+
+-----------------------------
+Replacing require_once get_template_directory_uri() . '/path-to/my-file' with require_once dirname( __FILE__ ) . '/path-to/my-file'
+https://stackoverflow.com/questions/23285503/warning-require-once-http-wrapper-is-disabled-in-the-server-configuration
