@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="cart-wrapper">
-                            <a href="#">
+                            <a href="/cart">
                                 <i class="icon icon-FullShoppingCart"></i>
                                 <span>2</span>
                             </a>
@@ -109,8 +109,8 @@
                                     </div>
                                 </div>
                                 <div class="cart-links">
-                                    <a href="cart.html">View cart</a>
-                                    <a href="checkout.html">Checkout</a>
+                                    <a href="<?= GO_TO_HOME ?>/cart">View cart</a>
+                                    <a href="<?= GO_TO_HOME ?>/checkout">Checkout</a>
                                 </div>
                             </div>
                         </div>
