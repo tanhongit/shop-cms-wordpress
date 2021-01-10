@@ -254,6 +254,27 @@ function show_fullname_curent_user()
     return $response;
 }
 
+/**
+ * Kiểm tra và chuyển hướng người dùng theo role.
+ */
+function my_login_redirect($redirect_to, $request, $user)
+{
+    global $user;
+    if (isset($user->roles) && is_array($user->roles)) {
+        //kiểm tra admin
+        if (in_array('administrator', $user->roles)) {
+            // chuyển đến trang quản trị
+            return admin_url();
+        } else {
+            // chuyển đến trang home
+            return home_url();
+        }
+    } else {
+        return $redirect_to;
+    }
+}
+add_filter('login_redirect', 'my_login_redirect', 10, 3);
+
 // --------------------------------------------------------------------------------------------------
 /*
 @ Woocommerce
