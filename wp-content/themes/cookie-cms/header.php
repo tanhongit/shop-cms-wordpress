@@ -61,58 +61,9 @@
                         <div class="cart-wrapper">
                             <a href="/cart">
                                 <i class="icon icon-FullShoppingCart"></i>
-                                <span>2</span>
+                                <span><?= WC()->cart->cart_contents_count ?></span>
                             </a>
-                            <div class="cart-item-wrapper">
-                                <div class="single-cart-item">
-                                    <div class="cart-img">
-                                        <a href="cart.html"><img src="assets/img/cart/1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="cart-text-btn">
-                                        <div class="cart-text">
-                                            <h5><a href="cart.html">Fresh Fruit Juice</a></h5>
-                                            <span class="cart-qty">×1</span>
-                                            <span class="cart-price">$68.00</span>
-                                        </div>
-                                        <button type="button"><i class="fa fa-close"></i></button>
-                                    </div>
-                                </div>
-                                <div class="single-cart-item">
-                                    <div class="cart-img">
-                                        <a href="cart.html"><img src="assets/img/cart/2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="cart-text-btn">
-                                        <div class="cart-text">
-                                            <h5><a href="cart.html">Fresh Vegetables</a></h5>
-                                            <span class="cart-qty">×1</span>
-                                            <span class="cart-price">$98.00</span>
-                                        </div>
-                                        <button type="button"><i class="fa fa-close"></i></button>
-                                    </div>
-                                </div>
-                                <div class="cart-price-total">
-                                    <div class="cart-price-info d-flex justify-content-between">
-                                        <span>Sub-Total :</span>
-                                        <span>$135.00</span>
-                                    </div>
-                                    <div class="cart-price-info d-flex justify-content-between">
-                                        <span>Eco Tax (-2.00) :</span>
-                                        <span>$4.00</span>
-                                    </div>
-                                    <div class="cart-price-info d-flex justify-content-between">
-                                        <span>VAT (20%) :</span>
-                                        <span>$27.00</span>
-                                    </div>
-                                    <div class="cart-price-info d-flex justify-content-between">
-                                        <span>Total :</span>
-                                        <span>$166.00</span>
-                                    </div>
-                                </div>
-                                <div class="cart-links">
-                                    <a href="<?= GO_TO_HOME ?>/cart">View cart</a>
-                                    <a href="<?= GO_TO_HOME ?>/checkout">Checkout</a>
-                                </div>
-                            </div>
+                            <?php require_once(dirname(__FILE__) . '/templates/cart/mini-cart.php') ?>
                         </div>
                     </div>
                 </div>
