@@ -7,6 +7,9 @@
 <?= dynamic_sidebar('banner-slider-1') ?>
 <!-- Hero Area End -->
 
+<!-- Show message if product added to cart-->
+<?php do_action('woocommerce_before_cart'); ?>
+
 <!-- Banner Four Area Start -->
 <?= dynamic_sidebar('area-2') ?>
 <!-- Banner Four Area End -->

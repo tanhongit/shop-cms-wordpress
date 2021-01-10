@@ -239,7 +239,25 @@ function tnt_styles()
 }
 add_action('wp_enqueue_scripts', 'tnt_styles');
 
+/*
+@ Hiện tên người dùng ra giao diện
+*/
+function show_fullname_curent_user()
+{
+    if (is_user_logged_in()) {
+        $user = wp_get_current_user();
+        empty($user->user_firstname) && empty($user->user_lastname) ? $response =  $user->display_name :
+            $response = $user->user_firstname . " " .  $user->user_lastname; // or user_login , user_firstname, user_lastname, display_name
+    } else {
+        $response = ``;
+    }
+    return $response;
+}
 
+// --------------------------------------------------------------------------------------------------
+/*
+@ Woocommerce
+*/
 /*
 @ Thiết lập hàm hiển thị thanh search
 */
@@ -269,17 +287,11 @@ function search_product_form($echo = true)
     echo $form;
 }
 
-/*
-@ Hiện tên người dùng ra giao diện
-*/
-function show_fullname_curent_user()
+/**
+ * Show notice if cart is empty.
+ */
+function the_empty_cart_message()
 {
-    if (is_user_logged_in()) {
-        $user = wp_get_current_user();
-        empty($user->user_firstname) && empty($user->user_lastname) ? $response =  $user->display_name :
-            $response = $user->user_firstname . " " .  $user->user_lastname; // or user_login , user_firstname, user_lastname, display_name
-    } else {
-        $response = ``;
-    }
-    return $response;
+    echo '<p class="cart-empty woocommerce-info">' . wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce'))) . '</p>
+    <a href="' . GO_TO_HOME . '" class="default-btn" tabindex="0">Shop now</a>';
 }
