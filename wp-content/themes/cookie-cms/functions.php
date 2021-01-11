@@ -319,6 +319,5 @@ function search_product_form($echo = true)
  */
 function the_empty_cart_message()
 {
-    echo '<p class="cart-empty woocommerce-info">' . wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce'))) . '</p>
-    <a href="' . GO_TO_HOME . '" class="default-btn" tabindex="0">Shop now</a>';
+    echo '<p class="cart-empty woocommerce-info">' . wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce'))) . '</p>';
 }
