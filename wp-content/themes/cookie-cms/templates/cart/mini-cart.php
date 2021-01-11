@@ -64,10 +64,10 @@ do_action('woocommerce_before_mini_cart'); ?>
                 <span>VAT (20%) :</span>
                 <span>$27.00</span>
             </div> -->
-            <div class="cart-price-info d-flex justify-content-between">
+            <!-- <div class="cart-price-info d-flex justify-content-between">
                 <span>Total :</span>
                 <span><?= WC()->cart->get_cart_subtotal() ?></span>
-            </div>
+            </div> -->
         </div>
     <?php else : ?>
         <div class="single-cart-item">

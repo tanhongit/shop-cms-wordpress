@@ -120,8 +120,8 @@
                 <div class="table-bottom-wrapper" class="actions">
                     <?php if (wc_coupons_enabled()) { ?>
                         <div class="table-coupon d-flex fix justify-content-start">
-                            <input type="text" pname="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>">
-                            <button class="button" type="submit" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>" type="submit"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
+                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>">
+                            <button class="button" type="submit" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_attr_e('Apply coupon', 'woocommerce'); ?></button>
                             <?php do_action('woocommerce_cart_coupon'); ?>
                         </div>
                     <?php } ?>
