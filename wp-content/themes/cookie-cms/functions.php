@@ -11,6 +11,12 @@ define('GO_TO_HOME', home_url());
 
 require_once(CORE . '/init.php');
 
+// Register apply woocommerce template
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
 // @ Thiết lập $content_width để khai báo kích thước chiều rộng của nội dung
 if (!isset($content_width)) {
     /*
