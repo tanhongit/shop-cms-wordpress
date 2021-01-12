@@ -19,38 +19,42 @@ do_action('woocommerce_before_mini_cart'); ?>
                 $thumbnail         = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
                 $product_price     = apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key);
                 $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
+                if ($check_product < 4) {
         ?>
-                <div class="single-cart-item">
-                    <div class="cart-img">
-                        <a class="img_product_cart" href="<?= $product_permalink ?>"><?= $thumbnail ?></a>
-                    </div>
-                    <div class="cart-text-btn">
-                        <div class="cart-text">
-                            <h5 style="margin: 0;"><a href="<?= $product_permalink ?>"><?= substr($product_name, 0, 20) . "..."; ?></a></h5>
-                            <span class="cart-qty">×<?php echo apply_filters('woocommerce_widget_cart_item_quantity', ' ' . sprintf('%s', $cart_item['quantity']) . ' ', $cart_item, $cart_item_key); ?></span>
-                            <span class="cart-price"><?= $product_price ?></span>
+                    <div class="single-cart-item">
+                        <div class="cart-img">
+                            <a class="img_product_cart" href="<?= $product_permalink ?>"><?= $thumbnail ?></a>
                         </div>
-                        <button type="button">
-                            <?php
-                            echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                                'woocommerce_cart_item_remove_link',
-                                sprintf(
-                                    '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="fa fa-trash"></i></a>',
-                                    esc_url(wc_get_cart_remove_url($cart_item_key)),
-                                    esc_html__('Remove this item', 'woocommerce'),
-                                    esc_attr($product_id),
-                                    esc_attr($_product->get_sku())
-                                ),
-                                $cart_item_key
-                            );
-                            ?></button>
+                        <div class="cart-text-btn">
+                            <div class="cart-text">
+                                <h5 style="margin: 0;"><a href="<?= $product_permalink ?>"><?= substr($product_name, 0, 20) . "..."; ?></a></h5>
+                                <span class="cart-qty">×<?php echo apply_filters('woocommerce_widget_cart_item_quantity', ' ' . sprintf('%s', $cart_item['quantity']) . ' ', $cart_item, $cart_item_key); ?></span>
+                                <span class="cart-price"><?= $product_price ?></span>
+                            </div>
+                            <button type="button">
+                                <?php
+                                echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                    'woocommerce_cart_item_remove_link',
+                                    sprintf(
+                                        '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="fa fa-trash"></i></a>',
+                                        esc_url(wc_get_cart_remove_url($cart_item_key)),
+                                        esc_html__('Remove this item', 'woocommerce'),
+                                        esc_attr($product_id),
+                                        esc_attr($_product->get_sku())
+                                    ),
+                                    $cart_item_key
+                                );
+                                ?></button>
+                        </div>
                     </div>
-                </div>
         <?php
+                } else continue;
             }
-        }
-        do_action('woocommerce_mini_cart_contents');
-        ?>
+        } ?>
+        <div class="single-cart-item">
+            <b>And <?= $check_product - 3 ?> other product... </b><a href="<?= GO_TO_HOME ?>/cart"> View cart</a>
+        </div>
+        <?php do_action('woocommerce_mini_cart_contents'); ?>
         <div class="cart-price-total">
             <div class="cart-price-info d-flex justify-content-between">
                 <span>Sub-Total :</span>
