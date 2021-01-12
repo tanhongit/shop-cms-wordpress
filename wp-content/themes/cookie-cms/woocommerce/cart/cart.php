@@ -18,6 +18,10 @@
 
 defined('ABSPATH') || exit; ?>
 
+<!-- Breadcrumb Area Start -->
+<?php require_once(dirname(__FILE__) . '/breadcrumb.php') ?>
+<!-- Breadcrumb Area End -->
+
 <div class="cart-area table-area pt-110 pb-95">
 
 	<!-- Show product - cart -->
