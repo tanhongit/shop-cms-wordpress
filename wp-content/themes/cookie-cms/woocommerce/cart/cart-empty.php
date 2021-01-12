@@ -17,8 +17,10 @@
  */
 
 defined('ABSPATH') || exit; ?>
-
-<div class="container">
+<!-- Breadcrumb Area Start -->
+<?php require_once(dirname(__FILE__) . '/breadcrumb.php') ?>
+<!-- Breadcrumb Area End -->
+<div class="container" style="padding-top:50px;">
 	<?php
 	// /*
 	//  * @hooked wc_empty_cart_message - 10

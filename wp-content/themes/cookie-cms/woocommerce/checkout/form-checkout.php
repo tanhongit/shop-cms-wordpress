@@ -17,8 +17,13 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+}?>
 
+<!-- Breadcrumb Area Start -->
+<?php require_once(dirname(__FILE__) . '/breadcrumb.php') ?>
+<!-- Breadcrumb Area End -->
+
+<?php 
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
