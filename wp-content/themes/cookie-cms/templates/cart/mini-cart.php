@@ -47,13 +47,15 @@ do_action('woocommerce_before_mini_cart'); ?>
                                 ?></button>
                         </div>
                     </div>
-        <?php
+            <?php
                 } else continue;
             }
-        } ?>
-        <div class="single-cart-item">
-            <b>And <?= $check_product - 3 ?> other product... </b><a href="<?= GO_TO_HOME ?>/cart"> View cart</a>
-        </div>
+        }
+        if ($check_product > 3) { ?>
+            <div class="single-cart-item">
+                <b>And <?= $check_product - 3 ?> other product... </b><a href="<?= GO_TO_HOME ?>/cart"> View cart</a>
+            </div>
+        <?php } ?>
         <?php do_action('woocommerce_mini_cart_contents'); ?>
         <div class="cart-price-total">
             <div class="cart-price-info d-flex justify-content-between">

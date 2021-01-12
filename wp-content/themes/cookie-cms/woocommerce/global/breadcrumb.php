@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shop breadcrumb
  *
@@ -16,31 +17,43 @@
  * @see         woocommerce_breadcrumb()
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
-}
+} ?>
 
-if ( ! empty( $breadcrumb ) ) {
+<?php
+if (!empty($breadcrumb)) {
 
-	echo $wrap_before;
+	echo $wrap_before; ?>
+	<div class="breadcrumb-area bg-12 text-center" style="padding-top:200px;">
+		<div class="container">
+			<h1><?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+					<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+				<?php endif; ?>
+			</h1>
+			<nav aria-label="breadcrumb">
+				<ul class="breadcrumb">
+				<?php
+				foreach ($breadcrumb as $key => $crumb) {
 
-	foreach ( $breadcrumb as $key => $crumb ) {
+					echo $before;
 
-		echo $before;
+					if (!empty($crumb[1]) && sizeof($breadcrumb) !== $key + 1) {
+						echo '<li class="breadcrumb-item"><a href="' . esc_url($crumb[1]) . '">' . esc_html($crumb[0]) . '</a></li>';
+					} else {
+						echo esc_html($crumb[0]);
+					}
 
-		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
-		} else {
-			echo esc_html( $crumb[0] );
-		}
+					echo $after;
 
-		echo $after;
+					if (sizeof($breadcrumb) !== $key + 1) {
+						echo $delimiter;
+					}
+				}
 
-		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo $delimiter;
-		}
-	}
-
-	echo $wrap_after;
-
-}
+				echo $wrap_after;
+			} ?>
+				</ul>
+			</nav>
+		</div>
+	</div>
