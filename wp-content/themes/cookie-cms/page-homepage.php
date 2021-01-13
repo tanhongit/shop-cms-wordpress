@@ -22,7 +22,7 @@ if (have_posts()) :
         <?php the_content() ?>
 <?php endwhile;
 else :
-    echo "<p>khong co post nao het</p>";
+    echo "<p>No product.</p>";
 endif; ?>
 <!-- Protuct Area End -->
 
