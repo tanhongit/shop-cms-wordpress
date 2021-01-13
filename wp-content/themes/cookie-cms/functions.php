@@ -361,3 +361,7 @@ function archive_product_loop_product_title()
         $text = '<h2>' . substr(get_the_title(), 0, 25) . '...</h2>' : $text = '<h2>' . get_the_title() . '</h2>';
     echo $text;
 }
+
+/**
+ * for product detail.
+ */
