@@ -15,3 +15,9 @@ https://stackoverflow.com/questions/23285503/warning-require-once-http-wrapper-i
 -----------------------------
 wc_get_template_part( 'content', 'product' ) | Where is this file located?
 https://wordpress.stackexchange.com/questions/358034/wc-get-template-part-content-product-where-is-this-file-located
+https://code.tutsplus.com/vi/tutorials/display-woocommerce-categories-subcategories-and-products-in-separate-lists--cms-25479
+
+-----------------------------
+[WOOCOMMERCE] CẤU TRÚC TEMPLATE CỦA WOOCOMMERCE
+https://thachpham.com/wordpress/wp-plugin/cau-truc-template-woocommerce.html
+https://woocommerce.github.io/code-reference/namespaces/default.html#function_woocommerce_template_loop_product_link_open
