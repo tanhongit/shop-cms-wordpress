@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Loop Price
  *
@@ -15,13 +16,13 @@
  * @version     1.6.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
 global $product;
 ?>
 
-<?php if ( $price_html = $product->get_price_html() ) : ?>
-	<span class="price"><?php echo $price_html; ?></span>
+<?php if ($price_html = $product->get_price_html()) : ?>
+	<?= cms_cookie_get_price($product) ?>
 <?php endif; ?>

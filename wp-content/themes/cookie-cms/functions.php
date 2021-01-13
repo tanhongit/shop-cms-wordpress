@@ -12,9 +12,10 @@ define('GO_TO_HOME', home_url());
 require_once(CORE . '/init.php');
 
 // Register apply woocommerce template
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
+add_action('after_setup_theme', 'woocommerce_support');
+function woocommerce_support()
+{
+    add_theme_support('woocommerce');
 }
 
 // @ Thiết lập $content_width để khai báo kích thước chiều rộng của nội dung
@@ -320,4 +321,43 @@ function search_product_form($echo = true)
 function the_empty_cart_message()
 {
     echo '<p class="cart-empty woocommerce-info">' . wp_kses_post(apply_filters('wc_empty_cart_message', __('Your cart is currently empty.', 'woocommerce'))) . '</p>';
+}
+
+//the price for product
+//call in loop/price.php
+function cms_cookie_get_price($product)
+{
+    $price_html = '<div class="pro-price">';
+    if ($product->get_price() > 0) {
+        if ($product->get_price() && $product->get_regular_price()) {
+            $from = $product->get_regular_price();
+            $to = $product->get_price();
+            $price_html .= '<span class="new-price">' . $to. 'đ</span><span class="old-price">' . $from . 'đ</span>';
+        } else {
+            $to = $product->get_price();
+            $price_html .= '<span class="new-price">' .$to . 'đ</span>';
+        }
+    } else {
+        $price_html .= '<div class="free">Free</div>';
+    }
+    $price_html .= '</div>';
+    return $price_html;
+}
+
+/**
+ * ------------------------------
+ * Hooks.
+ * ------------------------------
+ */
+/**
+ * for archive-product.
+ */
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+add_action('woocommerce_shop_loop_item_title', 'archive_product_loop_product_title', 10);
+
+function archive_product_loop_product_title()
+{
+    strlen(get_the_title()) > 25 ?
+        $text = '<h2>' . substr(get_the_title(), 0, 25) . '...</h2>' : $text = '<h2>' . get_the_title() . '</h2>';
+    echo $text;
 }

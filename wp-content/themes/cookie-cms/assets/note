@@ -11,3 +11,7 @@ show display name after login wordpress: https://wordpress.stackexchange.com/que
 -----------------------------
 Replacing require_once get_template_directory_uri() . '/path-to/my-file' with require_once dirname( __FILE__ ) . '/path-to/my-file'
 https://stackoverflow.com/questions/23285503/warning-require-once-http-wrapper-is-disabled-in-the-server-configuration
+
+-----------------------------
+wc_get_template_part( 'content', 'product' ) | Where is this file located?
+https://wordpress.stackexchange.com/questions/358034/wc-get-template-part-content-product-where-is-this-file-located
