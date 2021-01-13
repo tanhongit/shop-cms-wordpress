@@ -76,8 +76,12 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 					<?php if (get_post_meta(get_the_ID(), '_sale_price', true) > 0) { ?>
 						<h4><?php echo get_post_meta(get_the_ID(), '_sale_price', true); ?>đ<span><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?>đ</span></h4>
 					<?php } else { ?><h4><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?>đ</h4><?php } ?>
-					<h5><i class="fa fa-check"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
-					<?php do_action('woocommerce_single_product_summary'); ?>
+					<?php if (get_post_meta(get_the_ID(), '_stock_status', true) != "outofstock") { ?>
+						<h5><i class="fa fa-check"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
+					<?php } else { ?>
+						<h5><i class="fa fa-close" style="background-color:red;"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
+					<?php }
+					do_action('woocommerce_single_product_summary'); ?>
 				</div>
 			</div>
 		</div>
