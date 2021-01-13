@@ -34,8 +34,7 @@ echo $wrap_before; ?>
 						</div>
 					</form>
 				</div>
-			</div>
-			<br><span>Or</span><br><br><a class="default-btn" href="<?= GO_TO_HOME ?>">Go to home</a>
+			</div><br><br><a class="default-btn" href="<?= GO_TO_HOME ?>">Go to home</a>
 		</div>
 	</div>
 </div>

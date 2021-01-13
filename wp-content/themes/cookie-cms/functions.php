@@ -365,3 +365,7 @@ function archive_product_loop_product_title()
 /**
  * for product detail.
  */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+//related_products
+add_action( 'output_related_products_for_product_detail', 'woocommerce_output_related_products', 20 );
