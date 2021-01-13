@@ -332,10 +332,10 @@ function cms_cookie_get_price($product)
         if ($product->get_price() && $product->get_regular_price()) {
             $from = $product->get_regular_price();
             $to = $product->get_price();
-            $price_html .= '<span class="new-price">' . $to. 'đ</span><span class="old-price">' . $from . 'đ</span>';
+            $price_html .= '<span class="new-price">' . $to . 'đ</span><span class="old-price">' . $from . 'đ</span>';
         } else {
             $to = $product->get_price();
-            $price_html .= '<span class="new-price">' .$to . 'đ</span>';
+            $price_html .= '<span class="new-price">' . $to . 'đ</span>';
         }
     } else {
         $price_html .= '<div class="free">Free</div>';
@@ -365,7 +365,11 @@ function archive_product_loop_product_title()
 /**
  * for product detail.
  */
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 //related_products
-add_action( 'output_related_products_for_product_detail', 'woocommerce_output_related_products', 20 );
+add_action('output_related_products_for_product_detail', 'woocommerce_output_related_products', 20);
+function woocommerce_output_product_description()
+{
+    wc_get_template('single-product/tabs/description.php');
+}
