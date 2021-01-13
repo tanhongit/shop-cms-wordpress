@@ -32,10 +32,9 @@ if (!defined('ABSPATH')) {
 					<?php endforeach; ?>
 				</select>
 				<input type="hidden" name="paged" value="1" />
-				<button type="submit" class="button">GO</button>
-				<?php wc_query_string_form_fields(null, array('orderby', 'submit', 'paged', 'product-page')); ?>
-				
-			</div>
+				<?php wc_query_string_form_fields(null, array('orderby', 'submit', 'paged', 'product-page')); ?>				
+			</div><span></span>
+			<button type="submit" class="button"> GO</button>
 		</div>
 	</div>
 </form>
