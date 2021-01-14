@@ -23,9 +23,6 @@ if (!defined('ABSPATH')) {
 if ($related_products) : ?>
 	<div class="container">
 		<div class="section-title text-center">
-			<div class="section-img d-flex justify-content-center">
-				<img src="assets/img/icon/title.png" alt="">
-			</div>
 			<?php
 			$heading = apply_filters('woocommerce_product_related_products_heading', __('Related products', 'woocommerce'));
 
@@ -38,17 +35,17 @@ if ($related_products) : ?>
 	<div class="container text-center">
 		<div class="product-carousel">
 
-		<?php foreach ($related_products as $related_product) : ?>
+			<?php foreach ($related_products as $related_product) : ?>
 
-			<?php
-			$post_object = get_post($related_product->get_id());
+				<?php
+				$post_object = get_post($related_product->get_id());
 
-			setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+				setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-			wc_get_template_part('content', 'product');
-			?>
+				wc_get_template_part('content', 'product');
+				?>
 
-		<?php endforeach; ?>
+			<?php endforeach; ?>
 
 		</div>
 	</div>
