@@ -33,6 +33,14 @@ do_action('woocommerce_before_main_content');
 ?>
 <div class="product-detials-area bg-gray pt-110">
 	<div class="container">
+		<?php
+		/**
+		 * Hook: woocommerce_before_single_product.
+		 *
+		 * @hooked woocommerce_output_all_notices - 10
+		 */
+		do_action('woocommerce_before_single_product');
+		?>
 		<div class="row">
 			<?php while (have_posts()) : ?>
 				<?php the_post(); ?>

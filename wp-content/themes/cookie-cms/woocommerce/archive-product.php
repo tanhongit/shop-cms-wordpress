@@ -57,6 +57,7 @@ do_action('woocommerce_before_main_content');
 			 * @hooked woocommerce_result_count - 20
 			 * @hooked woocommerce_catalog_ordering - 30
 			 */
+			do_action('output_all_notices_before_shop_loop');
 		?>
 			<div class="ht-product-tab">
 				<?php

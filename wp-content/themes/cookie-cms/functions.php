@@ -349,6 +349,8 @@ function cms_cookie_get_price($product)
  * Hooks.
  * ------------------------------
  */
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
+add_action('output_all_notices_before_shop_loop', 'woocommerce_output_all_notices', 10);
 /**
  * for archive-product.
  */
