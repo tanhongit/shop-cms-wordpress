@@ -376,3 +376,23 @@ function woocommerce_output_product_description()
 }
 //_review
 add_action( 'output_review_before_comment_meta', 'woocommerce_review_display_rating', 10 );
+
+/**
+ * for my account.
+ */
+function my_account_output_downloads()
+{
+    wc_get_template('myaccount/downloads.php');
+}
+function my_account_output_address()
+{
+    wc_get_template('myaccount/my-address.php');
+}
+function my_account_output_payment()
+{
+    wc_get_template('myaccount/payment-methods.php');
+}
+function my_account_output_edit_account()
+{
+    wc_get_template('myaccount/form-edit-account.php');
+}

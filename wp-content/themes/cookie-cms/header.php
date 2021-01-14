@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/ie7.css">
     <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/plugins.css">
     <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= GET_TEMP_URL ?>/assets/css/style1.css">
     <script src="<?= GET_TEMP_URL ?>/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 
     <!--hook này để giúp WordPress hiểu được đây là khu vực thẻ <head>-->
@@ -48,7 +49,7 @@
                                 <h4>My Account </h4>
                                 <ul>
                                     <?php if (is_user_logged_in()) : ?>
-                                        <li><a href="#" class="modal-view button"><?= show_fullname_curent_user() ?></a></li>
+                                        <li><a href="<?= GO_TO_HOME ?>/my-account" class="modal-view button"><?= show_fullname_curent_user() ?></a></li>
                                         <hr>
                                         <li><a href="<?= GO_TO_HOME ?>/wp-login.php?action=logout" class="modal-view button">Logout</a></li>
                                     <?php else : ?>

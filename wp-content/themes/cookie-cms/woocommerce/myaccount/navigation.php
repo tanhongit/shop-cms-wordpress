@@ -1,4 +1,5 @@
 <?php
+
 /**
  * My Account navigation
  *
@@ -15,21 +16,26 @@
  * @version 2.6.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
-do_action( 'woocommerce_before_account_navigation' );
+do_action('woocommerce_before_account_navigation');
 ?>
 
-<nav class="woocommerce-MyAccount-navigation">
-	<ul>
-		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
-			</li>
-		<?php endforeach; ?>
-	</ul>
-</nav>
 
-<?php do_action( 'woocommerce_after_account_navigation' ); ?>
+
+<div class="myaccount-tab-menu nav" role="tablist">
+	<a href="#dashboad" class="" data-toggle="tab"><i class="fa fa-dashboard"></i>
+		Dashboard</a>
+	<a href="#orders" data-toggle="tab" class=""><i class="fa fa-cart-arrow-down"></i> Orders</a>
+	<a href="#download" data-toggle="tab" class=""><i class="fa fa-cloud-download"></i> Download</a>
+	<a href="#payment-method" data-toggle="tab" class=""><i class="fa fa-credit-card"></i> Payment
+		Method</a>
+	<a href="#address-edit" data-toggle="tab" class=""><i class="fa fa-map-marker"></i> address</a>
+	<a href="#account-info" data-toggle="tab" class="active"><i class="fa fa-user"></i> Account Details</a>
+	<a href="<?=GO_TO_HOME?>/wp-login.php?action=logout"><i class="fa fa-sign-out"></i> Logout</a>
+</div>
+
+<?php do_action('woocommerce_after_account_navigation'); ?>
+
