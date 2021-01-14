@@ -34,27 +34,30 @@ if (post_password_required()) {
 $attachment_ids = $product->get_gallery_attachment_ids();
 ?>
 <!-- Product DEtails Area Start -->
-<div class="product-detials-area bg-gray pt-110">
+<div class="product-detials-area bg-gray">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-5 col-md-5">
 				<div class="product-image-slider d-flex flex-column">
 					<!--Product Tab Content Start-->
 					<div class="tab-content product-large-image-list">
+
 						<div class="tab-pane fade show active" id="product-slide1" role="tabpanel" aria-labelledby="product-slide-tab-1">
 							<div class="single-product-img easyzoom img-full">
-								<a href="assets/img/product/2.jpg"><img src="assets/img/product/2.jpg" class="img-fluid" alt=""></a>
-								<?php do_action('woocommerce_before_single_product_summary'); ?>
+								<a href="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>"><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" class="img-fluid" alt=""></a>
 							</div>
 						</div>
+
 					</div>
 					<!--Product Content End-->
 					<!--Product Tab Menu Start-->
 					<div class="product-small-image-list">
 						<div class="nav small-image-slider-single-product-tabstyle-3" role="tablist">
+
 							<div class="single-small-image img-full">
-								<a data-toggle="tab" id="product-slide-tab-1" href="#product-slide1"><img src="assets/img/product/2.jpg" class="img-fluid" alt=""></a>
+								<a data-toggle="tab" id="product-slide-tab-1" href="#product-slide1"><img src="<?= wp_get_attachment_url( get_post_thumbnail_id() ) ?>" class="img-fluid" alt=""></a>
 							</div>
+
 						</div>
 					</div>
 					<!--Product Tab Menu End-->
@@ -95,7 +98,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 			<div class="p-tab-btn">
 				<div class="nav" role="tablist">
 					<a class="active" href="#tab1" data-toggle="tab" role="tab" aria-selected="true" aria-controls="tab1">Description</a>
-					<a href="#tab2" data-toggle="tab" role="tab" aria-selected="false" aria-controls="tab2">Reviews (2)</a>
+					<a href="#tab2" data-toggle="tab" role="tab" aria-selected="false" aria-controls="tab2">Reviews</a>
 				</div>
 			</div>
 			<div class="p-d-tab tab-content">
@@ -110,39 +113,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 				<div class="tab-pane fade scroll-area" id="tab2" role="tabpanel">
 					<div class="tab-items">
 						<div class="p-review-wrapper">
-							<h3>2 reviews for Ornare sed consequat</h3>
-							<div class="single-review-item">
-								<div class="review-logo">
-									<img src="assets/img/icon/logo.jpg" alt="">
-								</div>
-								<div class="p-review-text">
-									<div class="rating-number">
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-									</div>
-									<span class="p-review-info"><span>admin</span> – March 23, 2018</span>
-									<p>Lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi.</p>
-								</div>
-							</div>
-							<div class="single-review-item">
-								<div class="review-logo">
-									<img src="assets/img/icon/logo.jpg" alt="">
-								</div>
-								<div class="p-review-text">
-									<div class="rating-number">
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star color"></i>
-										<i class="fa fa-star"></i>
-									</div>
-									<span class="p-review-info"><span>admin</span> – March 23, 2018</span>
-									<p>Lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi.</p>
-								</div>
-							</div>
+							<?php do_action('output_review_before_comment_meta'); ?>
 						</div>
 						<form action="#" method="post" class="rating-form">
 							<h5>Add your rating</h5>
