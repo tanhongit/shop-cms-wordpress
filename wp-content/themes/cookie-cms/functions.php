@@ -329,7 +329,7 @@ function cms_cookie_get_price($product)
 {
     $price_html = '<div class="pro-price">';
     if ($product->get_price() > 0) {
-        if ($product->get_price() && $product->get_regular_price()) {
+        if ($product->get_price() != $product->get_regular_price()) {
             $from = $product->get_regular_price();
             $to = $product->get_price();
             $price_html .= '<span class="new-price">' . $to . 'đ</span><span class="old-price">' . $from . 'đ</span>';
@@ -349,7 +349,7 @@ function cms_cookie_get_price($product)
  * Hooks.
  * ------------------------------
  */
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
+remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
 add_action('output_all_notices_before_shop_loop', 'woocommerce_output_all_notices', 10);
 /**
  * for archive-product.
@@ -377,7 +377,7 @@ function woocommerce_output_product_description()
     wc_get_template('single-product/tabs/description.php');
 }
 //_review
-add_action( 'output_review_before_comment_meta', 'woocommerce_review_display_rating', 10 );
+add_action('output_review_before_comment_meta', 'woocommerce_review_display_rating', 10);
 
 /**
  * for my account.
