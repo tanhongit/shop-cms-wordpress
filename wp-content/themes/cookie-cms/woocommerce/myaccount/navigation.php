@@ -26,14 +26,14 @@ do_action('woocommerce_before_account_navigation');
 
 
 <div class="myaccount-tab-menu nav" role="tablist">
-	<a href="#dashboad" class="" data-toggle="tab"><i class="fa fa-dashboard"></i>
+	<a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>
 		Dashboard</a>
 	<a href="#orders" data-toggle="tab" class=""><i class="fa fa-cart-arrow-down"></i> Orders</a>
 	<a href="#download" data-toggle="tab" class=""><i class="fa fa-cloud-download"></i> Download</a>
 	<a href="#payment-method" data-toggle="tab" class=""><i class="fa fa-credit-card"></i> Payment
 		Method</a>
 	<a href="#address-edit" data-toggle="tab" class=""><i class="fa fa-map-marker"></i> address</a>
-	<a href="#account-info" data-toggle="tab" class="active"><i class="fa fa-user"></i> Account Details</a>
+	<a href="#account-info" data-toggle="tab" class=""><i class="fa fa-user"></i> Account Details</a>
 	<a href="<?=GO_TO_HOME?>/wp-login.php?action=logout"><i class="fa fa-sign-out"></i> Logout</a>
 </div>
 

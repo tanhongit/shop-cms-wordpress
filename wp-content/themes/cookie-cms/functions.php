@@ -396,3 +396,7 @@ function my_account_output_edit_account()
 {
     wc_get_template('myaccount/form-edit-account.php');
 }
+function my_account_output_my_orders()
+{
+    wc_get_template('myaccount/my-orders.php');
+}

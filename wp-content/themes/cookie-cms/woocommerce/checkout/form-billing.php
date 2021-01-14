@@ -20,8 +20,27 @@
 defined('ABSPATH') || exit;
 ?>
 <div class="checkbox-form">
-	<h3><?= esc_html__('Billing Details', 'woocommerce') ?></h3>
-	<div class="row">
+	<?php if (wc_ship_to_billing_address_only() && WC()->cart->needs_shipping()) : ?>
+
+		<h3><?php esc_html_e('Billing &amp; Shipping', 'woocommerce'); ?></h3>
+
+	<?php else : ?>
+
+		<h3><?php esc_html_e('Billing details', 'woocommerce'); ?></h3>
+
+	<?php endif; ?>
+
+	<?php do_action('woocommerce_before_checkout_billing_form', $checkout); ?>
+	<div class="woocommerce-billing-fields__field-wrapper">
+		<?php
+		$fields = $checkout->get_checkout_fields('billing');
+
+		foreach ($fields as $key => $field) {
+			woocommerce_form_field($key, $field, $checkout->get_value($key));
+		}
+		?>
+	</div>
+	<!-- <div class="row">
 		<div class="col-lg-12">
 			<div class="country-select">
 				<label><?= esc_html__('Country', 'woocommerce') ?> <span class="required">*</span></label>
@@ -115,9 +134,8 @@ defined('ABSPATH') || exit;
 				<textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
 			</div>
 		</div>
-	</div>
-	<!-- cái này t không biết là gì nên ko xóa -->
+	</div> -->
 
 
-	<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>
+	<?php do_action('woocommerce_after_checkout_billing_form', $checkout); ?>
 </div>

@@ -58,48 +58,9 @@ defined('ABSPATH') || exit;
 									</div>
 								</div>
 								<!-- Single Tab Content End -->
+
 								<!-- Single Tab Content Start -->
-								<div class="tab-pane fade" id="orders" role="tabpanel">
-									<div class="myaccount-content">
-										<h3>Orders</h3>
-										<div class="myaccount-table table-responsive text-center">
-											<table class="table table-bordered">
-												<thead class="thead-light">
-													<tr>
-														<th>Order</th>
-														<th>Date</th>
-														<th>Status</th>
-														<th>Total</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>Aug 22, 2018</td>
-														<td>Pending</td>
-														<td>$3000</td>
-														<td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>July 22, 2018</td>
-														<td>Approved</td>
-														<td>$200</td>
-														<td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>June 12, 2017</td>
-														<td>On Hold</td>
-														<td>$990</td>
-														<td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
+								<?=my_account_output_my_orders()?>
 								<!-- Single Tab Content End -->
 
 								<!-- Single Tab Content Start -->
@@ -122,48 +83,7 @@ defined('ABSPATH') || exit;
 
 								<!-- Single Tab Content Start -->
 								<?=my_account_output_edit_account()?>
-								<div class="tab-pane fade" id="account-info" role="tabpanel">
-									<div class="myaccount-content">
-										<h3>Account Details</h3>
-										<div class="account-details-form">
-											<form action="#">
-												
-												<div class="single-input-item">
-													<label for="display-name" class="required">Display Name</label>
-													<input type="text" id="display-name" />
-												</div>
-												<div class="single-input-item">
-													<label for="email" class="required">Email Addres</label>
-													<input type="email" id="email" />
-												</div>
-												<fieldset>
-													<legend>Password change</legend>
-													<div class="single-input-item">
-														<label for="current-pwd" class="required">Current Password</label>
-														<input type="password" id="current-pwd" />
-													</div>
-													<div class="row">
-														<div class="col-lg-6">
-															<div class="single-input-item">
-																<label for="new-pwd" class="required">New Password</label>
-																<input type="password" id="new-pwd" />
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="single-input-item">
-																<label for="confirm-pwd" class="required">Confirm Password</label>
-																<input type="password" id="confirm-pwd" />
-															</div>
-														</div>
-													</div>
-												</fieldset>
-												<div class="single-input-item">
-													<button class="check-btn sqr-btn ">Save Changes</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div> <!-- Single Tab Content End -->
+								<!-- Single Tab Content End -->
 							</div>
 						</div> <!-- My Account Tab Content End -->
 					</div>
