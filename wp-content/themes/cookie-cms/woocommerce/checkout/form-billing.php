@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Checkout billing information form
  *
@@ -16,59 +17,107 @@
  * @global WC_Checkout $checkout
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 ?>
-<div class="woocommerce-billing-fields">
-	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
-
-		<h3><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
-
-	<?php else : ?>
-
-		<h3><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
-
-	<?php endif; ?>
-
-	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
-
-	<div class="woocommerce-billing-fields__field-wrapper">
-		<?php
-		$fields = $checkout->get_checkout_fields( 'billing' );
-
-		foreach ( $fields as $key => $field ) {
-			woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
-		}
-		?>
+<div class="checkbox-form">
+	<h3><?= esc_html__('Billing Details', 'woocommerce') ?></h3>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="country-select">
+				<label><?= esc_html__('Country', 'woocommerce') ?> <span class="required">*</span></label>
+				<select>
+					<option value="volvo">Bangladesh</option>
+					<option value="saab">Algeria</option>
+					<option value="mercedes">Afghanistan</option>
+					<option value="audi">Ghana</option>
+					<option value="audi2">Albania</option>
+					<option value="audi3">Bahrain</option>
+					<option value="audi4">Colombia</option>
+					<option value="audi5">Dominican Republic</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('First Name', 'woocommerce') ?><span class="required">*</span></label>
+				<input type="text" placeholder="" />
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Last Name', 'woocommerce') ?><span class="required">*</span></label>
+				<input type="text" placeholder="" />
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Company Name', 'woocommerce') ?></label>
+				<input type="text" placeholder="" />
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Address', 'woocommerce') ?> <span class="required">*</span></label>
+				<input type="text" placeholder="Street address" />
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="checkout-form-list">
+				<input type="text" placeholder="Apartment, suite, unit etc. (optional)" />
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Town / City', 'woocommerce') ?><span class="required">*</span></label>
+				<input type="text" placeholder="Town / City" />
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('State', ' Country') ?><span class="required">*</span></label>
+				<input type="text" placeholder="" />
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Postcode / Zip', 'woocommerce') ?><span class="required">*</span></label>
+				<input type="text" placeholder="Postcode / Zip" />
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Email Address', 'woocommerce') ?><span class="required">*</span></label>
+				<input type="email" placeholder="" />
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('Phone', 'woocommerce') ?> <span class="required">*</span></label>
+				<input type="text" placeholder="Postcode / Zip" />
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="checkout-form-list create-acc">
+				<input id="cbox" type="checkbox" />
+				<label for="cbox"><?= esc_html__('Create an account', 'woocommerce') ?></label>
+			</div>
+			<div id="cbox_info" class="checkout-form-list create-account">
+				<p><?= esc_html__('Create an account by entering the information below. If you are a returning customer please login at the top of the page.', 'woocommerce') ?></p>
+				<label><?= esc_html__('Account password *', 'woocommerce') ?><span class="required">*</span></label>
+				<input type="password" placeholder="password" />
+			</div>
+		</div>
 	</div>
+	<div class="different-address">
+		<div class="order-notes">
+			<div class="checkout-form-list">
+				<label><?= esc_html__('order Notes', 'woocommerce') ?></label>
+				<textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+			</div>
+		</div>
+	</div>
+	<!-- cái này t không biết là gì nên ko xóa -->
+
 
 	<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>
 </div>
-
-<?php if ( ! is_user_logged_in() && $checkout->is_registration_enabled() ) : ?>
-	<div class="woocommerce-account-fields">
-		<?php if ( ! $checkout->is_registration_required() ) : ?>
-
-			<p class="form-row form-row-wide create-account">
-				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" id="createaccount" <?php checked( ( true === $checkout->get_value( 'createaccount' ) || ( true === apply_filters( 'woocommerce_create_account_default_checked', false ) ) ), true ); ?> type="checkbox" name="createaccount" value="1" /> <span><?php esc_html_e( 'Create an account?', 'woocommerce' ); ?></span>
-				</label>
-			</p>
-
-		<?php endif; ?>
-
-		<?php do_action( 'woocommerce_before_checkout_registration_form', $checkout ); ?>
-
-		<?php if ( $checkout->get_checkout_fields( 'account' ) ) : ?>
-
-			<div class="create-account">
-				<?php foreach ( $checkout->get_checkout_fields( 'account' ) as $key => $field ) : ?>
-					<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
-				<?php endforeach; ?>
-				<div class="clear"></div>
-			</div>
-
-		<?php endif; ?>
-
-		<?php do_action( 'woocommerce_after_checkout_registration_form', $checkout ); ?>
-	</div>
-<?php endif; ?>
