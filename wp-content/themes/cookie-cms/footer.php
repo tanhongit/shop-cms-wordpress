@@ -3,7 +3,7 @@
     <!-- Footer Top Area Start -->
     <div class="footer-top bg-4 pt-120 pb-120">
         <!-- Service Area Start -->
-        <div class="service-area pt-50">
+        <!-- <div class="service-area pt-50">
             <div class="container">
                 <div class="service-container">
                     <div class="service-content">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Service Area End -->
         <!-- Footer Widget Area Start -->
         <div class="footer-widget-area">
