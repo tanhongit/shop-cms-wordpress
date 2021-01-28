@@ -78,7 +78,15 @@
 
                                 $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
 
-                                echo $sidebar_corrected_ul;
+                                $sidebar_corrected_div = str_replace("<div", '<div class="instagram-image"', $sidebar_corrected_ul);
+
+                                $sidebar_corrected_dt = str_replace("<dt", '<div class="single-insta-img"', $sidebar_corrected_div);
+
+                                $sidebar_corrected_dl = str_replace("<dl", '<dl class=""', $sidebar_corrected_dt);
+
+                                $sidebar_corrected_img = str_replace("<img", '<img class="" width="" height="" ', $sidebar_corrected_dl);
+
+                                echo $sidebar_corrected_img;
                             }
                             ?>
                         </div>
@@ -94,7 +102,15 @@
 
                                 $sidebar_corrected_ul = str_replace("<ul>", '<ul class="footer-widget-list">', $sidebar);
 
-                                echo $sidebar_corrected_ul;
+                                $sidebar_corrected_div = str_replace("<div", '<div class="instagram-image"', $sidebar_corrected_ul);
+
+                                $sidebar_corrected_dt = str_replace("<dt", '<div class="single-insta-img"', $sidebar_corrected_div);
+
+                                $sidebar_corrected_dl = str_replace("<dl", '<dl class=""', $sidebar_corrected_dt);
+
+                                $sidebar_corrected_img = str_replace("<img", '<img class="" width="" height="" ', $sidebar_corrected_dl);
+
+                                echo $sidebar_corrected_img;
                             }
                             ?>
                         </div>
