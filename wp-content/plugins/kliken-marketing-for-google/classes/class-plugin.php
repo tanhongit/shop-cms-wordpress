@@ -52,7 +52,7 @@ class Plugin {
 			load_plugin_textdomain( 'kliken-marketing-for-google', false, KK_WC_PLUGIN_REL_PATH . '/languages' );
 
 			if ( $this->_bootstrapped ) {
-				throw new \Exception( __( 'Google Ads for WooCommerce plugin can only be called once', 'kliken-marketing-for-google' ), self::ALREADY_BOOTSTRAPED );
+				throw new \Exception( __( 'Google Ads & Marketing by Kliken plugin can only be called once', 'kliken-marketing-for-google' ), self::ALREADY_BOOTSTRAPED );
 			}
 
 			$this->check_dependencies();
@@ -270,13 +270,13 @@ class Plugin {
 	 */
 	private function check_dependencies() {
 		if ( ! function_exists( 'wc' ) ) {
-			throw new \Exception( __( 'Google Ads for WooCommerce requires WooCommerce to be activated', 'kliken-marketing-for-google' ), self::DEPENDENCIES_UNSATISFIED );
+			throw new \Exception( __( 'Google Ads & Marketing by Kliken requires WooCommerce to be activated', 'kliken-marketing-for-google' ), self::DEPENDENCIES_UNSATISFIED );
 		}
 
 		$required_woo_version = '3.0';
 		if ( version_compare( wc()->version, $required_woo_version, '<' ) ) {
 			/* translators: %s: Version number of WooCommerce required to run plugin. Do not translate. */
-			throw new \Exception( sprintf( __( 'Google Ads for WooCommerce requires WooCommerce version %s or greater', 'kliken-marketing-for-google' ), $required_woo_version ), self::DEPENDENCIES_UNSATISFIED );
+			throw new \Exception( sprintf( __( 'Google Ads & Marketing by Kliken requires WooCommerce version %s or greater', 'kliken-marketing-for-google' ), $required_woo_version ), self::DEPENDENCIES_UNSATISFIED );
 		}
 	}
 

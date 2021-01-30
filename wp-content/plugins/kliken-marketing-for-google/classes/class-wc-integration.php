@@ -22,7 +22,7 @@ class WC_Integration extends \WC_Integration {
 		global $woocommerce;
 
 		$this->id           = KK_WC_INTEGRATION_PAGE_ID;
-		$this->method_title = __( 'Google Ads for WooCommerce', 'kliken-marketing-for-google' );  // This is for the sub-section text.
+		$this->method_title = __( 'Google Ads & Marketing by Kliken', 'kliken-marketing-for-google' );  // This is for the sub-section text.
 
 		if ( true === $init ) {
 			// Load the settings.

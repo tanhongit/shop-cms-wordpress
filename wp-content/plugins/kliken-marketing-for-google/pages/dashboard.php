@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="wrap kk-wrapper">
-	<h2><?php esc_html_e( 'Google Ads for WooCommerce', 'kliken-marketing-for-google' ); ?></h2>
+	<h2><?php esc_html_e( 'Google Ads & Marketing by Kliken', 'kliken-marketing-for-google' ); ?></h2>
 
 	<p><?php esc_html_e( 'Launch Google Shopping ads and get your products found online easily.', 'kliken-marketing-for-google' ); ?></p>
 

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd033502741110464bbead21e67961d98
+class ComposerStaticInit3189846b77ba157bf806f2ea8cf80c49
 {
     public static $classMap = array (
         'Kliken\\WcPlugin\\Helper' => __DIR__ . '/../..' . '/classes/class-helper.php',
@@ -21,7 +21,7 @@ class ComposerStaticInitd033502741110464bbead21e67961d98
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitd033502741110464bbead21e67961d98::$classMap;
+            $loader->classMap = ComposerStaticInit3189846b77ba157bf806f2ea8cf80c49::$classMap;
 
         }, null, ClassLoader::class);
     }

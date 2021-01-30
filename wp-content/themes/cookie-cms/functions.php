@@ -76,6 +76,12 @@ if (!function_exists('tnt_theme_setup')) {
             )
         );
 
+        /** automatic feed link*/
+        add_theme_support('automatic-feed-links');
+
+        /** refresh widgest **/
+        add_theme_support('customize-selective-refresh-widgets');
+
         /*
         * Thêm chức năng custom background: đổi lại màu nền hoặc thêm ảnh nền cho website
         */
@@ -198,22 +204,22 @@ if (!function_exists('tnt_logo')) {
 // %1$s: get_bloginfo( ‘url’ )
 // %2$s: get_bloginfo( ‘description’ )
 // %3$s: get_bloginfo( ‘sitename’ )
-function themename_custom_logo_setup()
-{
-    $defaults = array(
-        'height'      => 100,
-        'width'       => 400,
-        'flex-height' => true,
-        'flex-width'  => true,
-        'header-text' => array('site-title', 'site-description'),
-        'unlink-homepage-logo' => true,
-    );
-    add_theme_support('custom-logo', $defaults);
-}
+// function themename_custom_logo_setup()
+// {
+//     $defaults = array(
+//         'height'      => 100,
+//         'width'       => 400,
+//         'flex-height' => true,
+//         'flex-width'  => true,
+//         'header-text' => array('site-title', 'site-description'),
+//         'unlink-homepage-logo' => true,
+//     );
+//     add_theme_support('custom-logo', $defaults);
+// }
 
-if (!function_exists('the_custom_logo')) {
-    the_custom_logo();
-}
+// if (!function_exists('the_custom_logo')) {
+//     the_custom_logo();
+// }
 
 /*
 @ Thiết lập hàm hiển thị menu

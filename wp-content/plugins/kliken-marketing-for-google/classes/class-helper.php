@@ -373,7 +373,7 @@ class Helper {
 		}
 
 		$authorization_url = get_site_url() . '/wc-auth/v1/authorize'
-			. '?app_name=' . rawurlencode( 'Google Ads for WooCommerce' )
+			. '?app_name=' . rawurlencode( KK_WC_AUTH_APP_NAME )
 			. '&scope=read_write'
 			. '&user_id=' . base64_encode( $account_id . ':' . $application_token )
 			. '&return_url=' . rawurlencode( 'bit.ly/2OweS8h' ) // This links back to woo.kliken.com. We just need to do this to shorten the link because some WordPress hostings seem to dislike long links.
@@ -462,7 +462,7 @@ class Helper {
 		return sprintf(
 			wp_kses(
 				/* translators: %s: A hyperlink */
-				__( '<strong>Google Ads for WooCommerce plugin is almost ready.</strong> <a href="%s">Click here</a> to get started.', 'kliken-marketing-for-google' ),
+				__( '<strong>Google Ads & Marketing by Kliken plugin is almost ready.</strong> <a href="%s">Click here</a> to get started.', 'kliken-marketing-for-google' ),
 				[
 					'strong' => [],
 					'a'      => [ 'href' => [] ],

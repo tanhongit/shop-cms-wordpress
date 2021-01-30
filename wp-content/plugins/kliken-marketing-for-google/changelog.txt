@@ -1,4 +1,4 @@
-*** Google Ads for WooCommerce Changelog ***
+*** Google Ads & Marketing by Kliken Changelog ***
 
 2020-02-20 - version 1.0.3
 * Added shopping cart actions and product view support.

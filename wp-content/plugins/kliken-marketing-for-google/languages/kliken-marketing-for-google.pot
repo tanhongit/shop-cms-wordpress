@@ -1,14 +1,14 @@
-# Copyright (C) 2020 Kliken
+# Copyright (C) 2021 Kliken
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Ads for WooCommerce 1.0.6\n"
+"Project-Id-Version: Google Ads & Marketing by Kliken 1.0.7\n"
 "Report-Msgid-Bugs-To: http://www.sitewit.com/contact/\n"
-"POT-Creation-Date: 2020-10-22 15:52:39+00:00\n"
+"POT-Creation-Date: 2021-01-27 18:58:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SiteWit <wordpress@sitewit.com>\n"
 "Language-Team: SiteWit <wordpress@sitewit.com>\n"
 "Language: en\n"
@@ -27,12 +27,12 @@ msgstr ""
 #. translators: %s: A hyperlink
 #: classes/class-helper.php:465
 msgid ""
-"<strong>Google Ads for WooCommerce plugin is almost ready.</strong> <a href="
-"\"%s\">Click here</a> to get started."
+"<strong>Google Ads & Marketing by Kliken plugin is almost ready.</strong> <a "
+"href=\"%s\">Click here</a> to get started."
 msgstr ""
 
 #: classes/class-plugin.php:55
-msgid "Google Ads for WooCommerce plugin can only be called once"
+msgid "Google Ads & Marketing by Kliken plugin can only be called once"
 msgstr ""
 
 #: classes/class-plugin.php:122
@@ -48,13 +48,14 @@ msgid "This will dismiss the message permanently. Are you sure?"
 msgstr ""
 
 #: classes/class-plugin.php:273
-msgid "Google Ads for WooCommerce requires WooCommerce to be activated"
+msgid "Google Ads & Marketing by Kliken requires WooCommerce to be activated"
 msgstr ""
 
 #. translators: %s: Version number of WooCommerce required to run plugin. Do
 #. not translate.
 #: classes/class-plugin.php:279
-msgid "Google Ads for WooCommerce requires WooCommerce version %s or greater"
+msgid ""
+"Google Ads & Marketing by Kliken requires WooCommerce version %s or greater"
 msgstr ""
 
 #: classes/class-rest-misc-controller.php:63
@@ -66,10 +67,8 @@ msgstr ""
 msgid "Sorry, you cannot list resources."
 msgstr ""
 
-#. #-#-#-#-#  kliken-marketing-for-google.pot (Google Ads for WooCommerce 1.0.6)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: pages/dashboard.php:13 pages/getstarted.php:28
-msgid "Google Ads for WooCommerce"
+msgid "Google Ads & Marketing by Kliken"
 msgstr ""
 
 #: classes/class-wc-integration.php:47
