@@ -416,3 +416,38 @@ function my_account_output_my_orders()
 {
     wc_get_template('myaccount/my-orders.php');
 }
+
+/**
+ * Edit amount related products output.
+ */
+// // way 1
+// remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+// add_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+// function woocommerce_output_related_products()
+// {
+
+//     $args = array(
+//         'posts_per_page' => 12,
+//         'columns'        => 4,
+//         'orderby'        => 'rand', // @codingStandardsIgnoreLine.
+//     );
+
+//     woocommerce_related_products(apply_filters('woocommerce_output_related_products_args', $args));
+// }
+
+// way 2
+function woo_related_products_limit()
+{
+    global $product;
+
+    $args['posts_per_page'] = 6;
+    return $args;
+}
+add_filter('woocommerce_output_related_products_args', 'cms_related_products_args');
+function cms_related_products_args($args)
+{
+
+    $args['posts_per_page'] = 10; // 4 related products
+    $args['columns'] = 2; // arranged in 2 columns
+    return $args;
+}
