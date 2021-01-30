@@ -79,7 +79,9 @@ if (!function_exists('tnt_theme_setup')) {
         /** automatic feed link*/
         add_theme_support('automatic-feed-links');
 
-        /** refresh widgest **/
+        /** refresh widgest 
+         * Add theme support for selective refresh for widgets
+         * **/
         add_theme_support('customize-selective-refresh-widgets');
 
         /*
@@ -89,6 +91,12 @@ if (!function_exists('tnt_theme_setup')) {
             'default-color' => '#e8e8e8',
         );
         add_theme_support('custom-background', $default_background);
+
+        // Add support for full and wide align images.
+        add_theme_support('align-wide');
+
+        // Add support for responsive embeds.
+        add_theme_support('responsive-embeds');
 
         /*
         * Tạo menu cho theme
