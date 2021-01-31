@@ -369,8 +369,7 @@ add_action('output_all_notices_before_shop_loop', 'woocommerce_output_all_notice
 /**
  * for archive-product.
  */
-remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
-add_action('woocommerce_shop_loop_item_title', 'archive_product_loop_product_title', 10);
+add_action('woocommerce_shop_loop_item_title_one', 'archive_product_loop_product_title', 10);
 
 function archive_product_loop_product_title()
 {
@@ -403,6 +402,10 @@ if ( ! function_exists( 'woocommerce_product_loop_start' ) ) {
 			return $loop_start;
 		}
 	}
+}
+function woocommerce_product_loop_end_list()
+{
+    wc_get_template('loop/loop-end-list.php');
 }
 
 /**

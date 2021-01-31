@@ -91,10 +91,10 @@ do_action('woocommerce_before_main_content');
 						 * Hook: woocommerce_shop_loop.
 						 */
 						do_action('woocommerce_shop_loop');
-						wc_get_template_part('content', 'product');
+						wc_get_template_part('content', 'product-list');
 					}
 				}
-				woocommerce_product_loop_end(); ?>
+				woocommerce_product_loop_end_list(); ?>
 
 			</div>
 		<?php
