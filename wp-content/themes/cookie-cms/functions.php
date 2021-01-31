@@ -370,7 +370,6 @@ add_action('output_all_notices_before_shop_loop', 'woocommerce_output_all_notice
  * for archive-product.
  */
 add_action('woocommerce_shop_loop_item_title_one', 'archive_product_loop_product_title', 10);
-
 function archive_product_loop_product_title()
 {
     strlen(get_the_title()) > 25 ?
@@ -407,6 +406,8 @@ function woocommerce_product_loop_end_list()
 {
     wc_get_template('loop/loop-end-list.php');
 }
+// Show short description for "list" archive product
+add_action('woocommerce_shop_loop_item_short_desc', 'woocommerce_template_single_excerpt', 5);
 
 /**
  * for product detail.
