@@ -360,11 +360,12 @@ function cms_cookie_get_price($product)
 
 /**
  * ------------------------------
- * Hooks.
+ * Hooks woocommerce.
  * ------------------------------
  */
 remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
 add_action('output_all_notices_before_shop_loop', 'woocommerce_output_all_notices', 10);
+
 /**
  * for archive-product.
  */
@@ -376,6 +377,32 @@ function archive_product_loop_product_title()
     strlen(get_the_title()) > 25 ?
         $text = '<h2>' . substr(get_the_title(), 0, 25) . '...</h2>' : $text = '<h2>' . get_the_title() . '</h2>';
     echo $text;
+}
+// Show list product: list
+if ( ! function_exists( 'woocommerce_product_loop_start' ) ) {
+
+	/**
+	 * Output the start of a product loop. By default this is a UL.
+	 *
+	 * @param bool $echo Should echo?.
+	 * @return string
+	 */
+	function woocommerce_product_loop_start_list( $echo = true ) {
+		ob_start();
+
+		wc_set_loop_prop( 'loop', 0 );
+
+		wc_get_template( 'loop/loop-start-list.php' );
+
+		$loop_start = apply_filters( 'woocommerce_product_loop_start', ob_get_clean() );
+
+		if ( $echo ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $loop_start;
+		} else {
+			return $loop_start;
+		}
+	}
 }
 
 /**
@@ -417,9 +444,7 @@ function my_account_output_my_orders()
     wc_get_template('myaccount/my-orders.php');
 }
 
-/**
- * Edit amount related products output.
- */
+// // Edit amount related products output.
 // // way 1
 // remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 // add_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);

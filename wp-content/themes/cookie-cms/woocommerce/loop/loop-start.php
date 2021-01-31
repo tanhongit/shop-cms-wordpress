@@ -21,6 +21,6 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <!-- <ul class="products columns-<?php echo esc_attr(wc_get_loop_prop('columns')); ?>"> -->
-<div class="ht-product-shop tab-content text-center">
-	<div class="tab-pane active show fade" id="grid" role="tabpanel">
-		<div class="custom-row">
+
+<div class="tab-pane active show fade" id="grid" role="tabpanel">
+	<div class="custom-row">
