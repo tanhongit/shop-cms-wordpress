@@ -85,7 +85,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 						<a href="#" class="scroll-down">(2 customer reviews)</a>
 					</div>
 					<?php if (get_post_meta(get_the_ID(), '_sale_price', true) > 0) { ?>
-						<h4><?php echo get_post_meta(get_the_ID(), '_sale_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?><span><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?>đ</span></h4>
+						<h4><?php echo get_post_meta(get_the_ID(), '_sale_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?><span><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?></span></h4>
 					<?php } else { ?><h4><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?></h4><?php } ?>
 					<?php if (get_post_meta(get_the_ID(), '_stock_status', true) != "outofstock") { ?>
 						<h5><i class="fa fa-check"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
