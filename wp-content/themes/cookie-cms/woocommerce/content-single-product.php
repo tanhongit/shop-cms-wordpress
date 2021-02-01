@@ -20,6 +20,21 @@ defined('ABSPATH') || exit;
 
 global $product;
 
+$args = apply_filters(
+	'wc_price_args',
+	wp_parse_args(
+		$args,
+		array(
+			'ex_tax_label'       => false,
+			'currency'           => '',
+			'decimal_separator'  => wc_get_price_decimal_separator(),
+			'thousand_separator' => wc_get_price_thousand_separator(),
+			'decimals'           => wc_get_price_decimals(),
+			'price_format'       => get_woocommerce_price_format(),
+		)
+	)
+);
+
 if (post_password_required()) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
@@ -48,7 +63,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 						<div class="nav small-image-slider-single-product-tabstyle-3" role="tablist">
 
 							<div class="single-small-image img-full">
-								<a data-toggle="tab" id="product-slide-tab-1" href="#product-slide1"><img src="<?= wp_get_attachment_url( get_post_thumbnail_id() ) ?>" class="img-fluid" alt=""></a>
+								<a data-toggle="tab" id="product-slide-tab-1" href="#product-slide1"><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" class="img-fluid" alt=""></a>
 							</div>
 
 						</div>
@@ -70,8 +85,8 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 						<a href="#" class="scroll-down">(2 customer reviews)</a>
 					</div>
 					<?php if (get_post_meta(get_the_ID(), '_sale_price', true) > 0) { ?>
-						<h4><?php echo get_post_meta(get_the_ID(), '_sale_price', true); ?>đ<span><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?>đ</span></h4>
-					<?php } else { ?><h4><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?>đ</h4><?php } ?>
+						<h4><?php echo get_post_meta(get_the_ID(), '_sale_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?><span><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?>đ</span></h4>
+					<?php } else { ?><h4><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?></h4><?php } ?>
 					<?php if (get_post_meta(get_the_ID(), '_stock_status', true) != "outofstock") { ?>
 						<h5><i class="fa fa-check"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
 					<?php } else { ?>
