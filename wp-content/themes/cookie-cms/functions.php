@@ -339,17 +339,32 @@ function the_empty_cart_message()
 
 //the price for product
 //call in loop/price.php
-function cms_cookie_get_price($product)
+function cms_cookie_get_price($product, $args = array())
 {
+    $args = apply_filters(
+        'wc_price_args',
+        wp_parse_args(
+            $args,
+            array(
+                'ex_tax_label'       => false,
+                'currency'           => '',
+                'decimal_separator'  => wc_get_price_decimal_separator(),
+                'thousand_separator' => wc_get_price_thousand_separator(),
+                'decimals'           => wc_get_price_decimals(),
+                'price_format'       => get_woocommerce_price_format(),
+            )
+        )
+    );
+
     $price_html = '<div class="pro-price">';
     if ($product->get_price() > 0) {
         if ($product->get_price() != $product->get_regular_price()) {
             $from = $product->get_regular_price();
             $to = $product->get_price();
-            $price_html .= '<span class="new-price">' . $to . 'đ</span><span class="old-price">' . $from . 'đ</span>';
+            $price_html .= '<span class="new-price">' . $to . get_woocommerce_currency_symbol($args['currency']) . '</span><span class="old-price">' . $from . get_woocommerce_currency_symbol($args['currency']) . '</span>';
         } else {
             $to = $product->get_price();
-            $price_html .= '<span class="new-price">' . $to . 'đ</span>';
+            $price_html .= '<span class="new-price">' . $to . get_woocommerce_currency_symbol($args['currency']) . '</span>';
         }
     } else {
         $price_html .= '<div class="free">Free</div>';
@@ -377,30 +392,31 @@ function archive_product_loop_product_title()
     echo $text;
 }
 // Show list product: list
-if ( ! function_exists( 'woocommerce_product_loop_start' ) ) {
+if (!function_exists('woocommerce_product_loop_start')) {
 
-	/**
-	 * Output the start of a product loop. By default this is a UL.
-	 *
-	 * @param bool $echo Should echo?.
-	 * @return string
-	 */
-	function woocommerce_product_loop_start_list( $echo = true ) {
-		ob_start();
+    /**
+     * Output the start of a product loop. By default this is a UL.
+     *
+     * @param bool $echo Should echo?.
+     * @return string
+     */
+    function woocommerce_product_loop_start_list($echo = true)
+    {
+        ob_start();
 
-		wc_set_loop_prop( 'loop', 0 );
+        wc_set_loop_prop('loop', 0);
 
-		wc_get_template( 'loop/loop-start-list.php' );
+        wc_get_template('loop/loop-start-list.php');
 
-		$loop_start = apply_filters( 'woocommerce_product_loop_start', ob_get_clean() );
+        $loop_start = apply_filters('woocommerce_product_loop_start', ob_get_clean());
 
-		if ( $echo ) {
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $loop_start;
-		} else {
-			return $loop_start;
-		}
-	}
+        if ($echo) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo $loop_start;
+        } else {
+            return $loop_start;
+        }
+    }
 }
 function woocommerce_product_loop_end_list()
 {
