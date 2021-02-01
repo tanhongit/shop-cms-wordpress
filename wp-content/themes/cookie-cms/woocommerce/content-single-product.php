@@ -84,14 +84,31 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 						</div>
 						<a href="#" class="scroll-down">(2 customer reviews)</a>
 					</div>
+
+					<!-- Show price -->
 					<?php if (get_post_meta(get_the_ID(), '_sale_price', true) > 0) { ?>
-						<h4><?php echo get_post_meta(get_the_ID(), '_sale_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?><span><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?></span></h4>
-					<?php } else { ?><h4><?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?><?= get_woocommerce_currency_symbol($args['currency']) ?></h4><?php } ?>
+						<h4>
+							<?php echo number_format(get_post_meta(get_the_ID(), '_sale_price', true), $args['decimals'], $args['decimal_separator'], $args['thousand_separator']); ?>
+							<?= get_woocommerce_currency_symbol($args['currency']) ?>
+							<span>
+								<?php echo number_format(get_post_meta(get_the_ID(), '_regular_price', true), $args['decimals'], $args['decimal_separator'], $args['thousand_separator']); ?>
+								<?= get_woocommerce_currency_symbol($args['currency']) ?>
+							</span>
+						</h4>
+					<?php } else { ?>
+						<h4>
+							<?php echo number_format(get_post_meta(get_the_ID(), '_regular_price', true), $args['decimals'], $args['decimal_separator'], $args['thousand_separator']); ?>
+							<?= get_woocommerce_currency_symbol($args['currency']) ?>
+						</h4>
+					<?php } ?>
+
+					<!-- Show status stock -->
 					<?php if (get_post_meta(get_the_ID(), '_stock_status', true) != "outofstock") { ?>
 						<h5><i class="fa fa-check"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
 					<?php } else { ?>
 						<h5><i class="fa fa-close" style="background-color:red;"></i><?php echo get_post_meta(get_the_ID(), '_stock_status', true); ?></h5>
 					<?php }
+
 					do_action('woocommerce_single_product_summary'); ?>
 				</div>
 			</div>

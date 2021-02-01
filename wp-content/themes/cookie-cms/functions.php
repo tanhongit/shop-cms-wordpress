@@ -361,10 +361,10 @@ function cms_cookie_get_price($product, $args = array())
         if ($product->get_price() != $product->get_regular_price()) {
             $from = $product->get_regular_price();
             $to = $product->get_price();
-            $price_html .= '<span class="new-price">' . $to . get_woocommerce_currency_symbol($args['currency']) . '</span><span class="old-price">' . $from . get_woocommerce_currency_symbol($args['currency']) . '</span>';
+            $price_html .= '<span class="new-price">' . number_format($to, $args['decimals'], $args['decimal_separator'], $args['thousand_separator']) . get_woocommerce_currency_symbol($args['currency']) . '</span><span class="old-price">' . number_format($from, $args['decimals'], $args['decimal_separator'], $args['thousand_separator']) . get_woocommerce_currency_symbol($args['currency']) . '</span>';
         } else {
             $to = $product->get_price();
-            $price_html .= '<span class="new-price">' . $to . get_woocommerce_currency_symbol($args['currency']) . '</span>';
+            $price_html .= '<span class="new-price">' . number_format($to, $args['decimals'], $args['decimal_separator'], $args['thousand_separator']) . get_woocommerce_currency_symbol($args['currency']) . '</span>';
         }
     } else {
         $price_html .= '<div class="free">Free</div>';
