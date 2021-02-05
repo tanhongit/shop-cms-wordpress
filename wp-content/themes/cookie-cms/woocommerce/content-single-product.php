@@ -120,46 +120,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 <div class="product-review-tab-area bg-gray pt-90 pb-105">
 	<div class="container scroll-area">
 		<div class="p-d-tab-container">
-			<div class="p-tab-btn">
-				<div class="nav" role="tablist">
-					<a class="active" href="#tab1" data-toggle="tab" role="tab" aria-selected="true" aria-controls="tab1">Description</a>
-					<a href="#tab2" data-toggle="tab" role="tab" aria-selected="false" aria-controls="tab2">Reviews</a>
-				</div>
-			</div>
-			<div class="p-d-tab tab-content">
-				<div class="tab-pane active show fade" id="tab1" role="tabpanel">
-					<div class="tab-items">
-						<div class="product-desc-text">
-							<?php
-							woocommerce_output_product_description(); ?>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane fade scroll-area" id="tab2" role="tabpanel">
-					<div class="tab-items">
-						<div class="p-review-wrapper">
-							<?php do_action('output_review_before_comment_meta'); ?>
-						</div>
-						<form action="#" method="post" class="rating-form">
-							<h5>Add your rating</h5>
-							<div class="submit-rating">
-								<i class="fa fa-star-o"></i>
-								<i class="fa fa-star-o"></i>
-								<i class="fa fa-star-o"></i>
-								<i class="fa fa-star-o"></i>
-								<i class="fa fa-star-o"></i>
-							</div>
-							<label for="r-textarea">Your Review</label>
-							<textarea name="review" id="r-textarea" cols="30" rows="10"></textarea>
-							<label for="r-name">Name *</label>
-							<input type="text" placeholder="" id="r-name">
-							<label for="r-email">Email *</label>
-							<input type="email" placeholder="" id="r-email">
-							<button type="button" class="default-btn">Submit</button>
-						</form>
-					</div>
-				</div>
-			</div>
+			<?php do_action('woocommerce_after_single_product_summary'); ?>
 		</div>
 	</div>
 </div>
@@ -169,5 +130,6 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 	<?php
 	do_action('output_related_products_for_product_detail');
 	?>
+	<?php do_action('woocommerce_after_single_product'); ?>
 </div>
 <!-- Protuct Area End -->
