@@ -496,3 +496,7 @@ function cms_related_products_args($args)
     $args['columns'] = 2; // arranged in 2 columns
     return $args;
 }
+
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'output_rating_products_for_product_detail', 'woocommerce_template_single_rating', 10 );

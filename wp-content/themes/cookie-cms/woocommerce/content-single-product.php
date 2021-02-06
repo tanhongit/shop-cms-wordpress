@@ -75,14 +75,15 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 				<div class="product-details-text">
 					<h3><?php the_title(); ?></h3>
 					<div class="p-rating-review">
-						<div class="product-rating">
+						<!-- <div class="product-rating">
 							<i class="fa fa-star-o color"></i>
 							<i class="fa fa-star-o color"></i>
 							<i class="fa fa-star-o color"></i>
 							<i class="fa fa-star-o"></i>
 							<i class="fa fa-star-o"></i>
 						</div>
-						<a href="#" class="scroll-down">(2 customer reviews)</a>
+						<a href="#" class="scroll-down">(2 customer reviews)</a> -->
+						<?= do_action('output_rating_products_for_product_detail') ?>
 					</div>
 
 					<!-- Show price -->
