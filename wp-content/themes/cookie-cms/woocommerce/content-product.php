@@ -74,7 +74,12 @@ if (empty($product) || !$product->is_visible()) {
 			 */
 			do_action('woocommerce_after_shop_loop_item_title'); ?>
 
-			<?= do_action('output_rating_products_for_product_detail') ?>
+			<?php
+			/**
+			 * Hook: woocommerce_after_shop_loop_item_title.		
+			 * @hooked woocommerce_template_single_rating - 10				
+			 */
+			do_action('output_rating_products_for_product_detail') ?>
 		</div>
 	</div>
 </div>

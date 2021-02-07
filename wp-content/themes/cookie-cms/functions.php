@@ -387,8 +387,8 @@ add_action('output_all_notices_before_shop_loop', 'woocommerce_output_all_notice
 add_action('woocommerce_shop_loop_item_title_one', 'archive_product_loop_product_title', 10);
 function archive_product_loop_product_title()
 {
-    strlen(get_the_title()) > 25 ?
-        $text = '<h2>' . substr(get_the_title(), 0, 25) . '...</h2>' : $text = '<h2>' . get_the_title() . '</h2>';
+    strlen(get_the_title()) > 27 ?
+        $text = '<h2>' . substr(get_the_title(), 0, 27) . '...</h2>' : $text = '<h2>' . get_the_title() . '</h2>';
     echo $text;
 }
 // Show list product: list
