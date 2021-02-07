@@ -57,7 +57,8 @@ if (empty($product) || !$product->is_visible()) {
 				?>
 			</div>
 		</div>
-		<div class="product-text">
+		<div class="product-text" style="text-align: left; padding-left: 10px;">
+
 			<?php
 			/**
 			 * Hook: woocommerce_shop_loop_item_title.
@@ -69,10 +70,11 @@ if (empty($product) || !$product->is_visible()) {
 			/**
 			 * Hook: woocommerce_after_shop_loop_item_title.
 			 *
-			 * @hooked woocommerce_template_loop_rating - 5
 			 * @hooked woocommerce_template_loop_price - 10
 			 */
 			do_action('woocommerce_after_shop_loop_item_title'); ?>
+
+			<?= do_action('output_rating_products_for_product_detail') ?>
 		</div>
 	</div>
 </div>

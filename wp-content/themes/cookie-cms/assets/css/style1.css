@@ -2745,10 +2745,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: -ms-flexbox;
     display: flex;
     font-family: "Oswald", sans-serif;
-    font-size: 14px;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    font-size: 14px; }
     .single-product-item .product-text .pro-price span {
       display: block;
       margin: 0 4px; }

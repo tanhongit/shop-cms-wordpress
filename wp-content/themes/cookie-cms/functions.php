@@ -432,16 +432,20 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 //related_products
 add_action('output_related_products_for_product_detail', 'woocommerce_output_related_products', 20);
+
 //description
 function woocommerce_output_product_description()
 {
     wc_get_template('single-product/tabs/description.php');
 }
+
 // review single product
 add_action('output_review_before_comment_meta', 'woocommerce_review_display_rating', 10);
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 add_action( 'output_rating_products_for_product_detail', 'woocommerce_template_single_rating', 10 );
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 
 /**
  * for my account.
