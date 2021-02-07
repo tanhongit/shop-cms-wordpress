@@ -437,8 +437,11 @@ function woocommerce_output_product_description()
 {
     wc_get_template('single-product/tabs/description.php');
 }
-//_review
+// review single product
 add_action('output_review_before_comment_meta', 'woocommerce_review_display_rating', 10);
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'output_rating_products_for_product_detail', 'woocommerce_template_single_rating', 10 );
 
 /**
  * for my account.
@@ -465,6 +468,7 @@ function my_account_output_my_orders()
 }
 
 // // Edit amount related products output.
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 // // way 1
 // remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 // add_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
@@ -492,11 +496,9 @@ add_filter('woocommerce_output_related_products_args', 'cms_related_products_arg
 function cms_related_products_args($args)
 {
 
-    $args['posts_per_page'] = 10; // 4 related products
+    $args['posts_per_page'] = 16; // 4 related products
     $args['columns'] = 2; // arranged in 2 columns
     return $args;
 }
 
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-add_action( 'output_rating_products_for_product_detail', 'woocommerce_template_single_rating', 10 );
