@@ -83,7 +83,13 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 							<i class="fa fa-star-o"></i>
 						</div>
 						<a href="#" class="scroll-down">(2 customer reviews)</a> -->
-						<?= do_action('output_rating_products_for_product_detail') ?>
+						<?php
+						/**
+						 * Hook: woocommerce_template_single_rating.
+						 *
+						 * @hooked woocommerce_template_single_rating - 10
+						 */
+						do_action('output_rating_products_for_product_detail') ?>
 					</div>
 
 					<!-- Show price -->
@@ -129,8 +135,14 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 <!-- Protuct Area Start -->
 <div class="product-area bg-gray pb-80 mb-95 related-product">
 	<?php
+	/**
+	 * Hook: woocommerce_output_related_products.
+	 *
+	 * @hooked woocommerce_output_related_products - 20
+	 */
 	do_action('output_related_products_for_product_detail');
 	?>
+
 	<?php do_action('woocommerce_after_single_product'); ?>
 </div>
 <!-- Protuct Area End -->
