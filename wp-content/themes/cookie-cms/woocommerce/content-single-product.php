@@ -49,22 +49,57 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 				<div class="product-image-slider d-flex flex-column">
 					<!--Product Tab Content Start-->
 					<div class="tab-content product-large-image-list">
-
-						<div class="tab-pane fade show active" id="product-slide1" role="tabpanel" aria-labelledby="product-slide-tab-1">
-							<div class="single-product-img easyzoom img-full">
-								<a href="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>"><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" class="img-fluid" alt=""></a>
+						<?php
+						if (empty($attachment_ids)) : ?>
+							<div class="tab-pane fade show active" id="product-slide1" role="tabpanel" aria-labelledby="product-slide-tab-1">
+								<div class="single-product-img easyzoom img-full">
+									<a href="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>"><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" class="img-fluid" alt="<?= get_the_title($attachment_ids) ?>"></a>
+								</div>
 							</div>
-						</div>
+							<?php
+						else :
+							$number = 1;
+							foreach ($attachment_ids as $attachment_id) {
+								if ($number == 1) : ?>
+									<div class="tab-pane fade show active" id="product-slide1" role="tabpanel" aria-labelledby="product-slide-tab-1">
+										<div class="single-product-img easyzoom img-full">
+											<a href="<?= wp_get_attachment_url($attachment_id) ?>"><img src="<?= wp_get_attachment_url($attachment_id) ?>" class="img-fluid" alt="<?= get_the_title($attachment_ids) ?>"></a>
+										</div>
+									</div>
 
+								<?php else : ?>
+									<div class="tab-pane fade" id="product-slide<?= $number ?>" role="tabpanel" aria-labelledby="product-slide-tab-<?= $number ?>">
+										<div class="single-product-img easyzoom img-full">
+											<a href="<?= wp_get_attachment_url($attachment_id) ?>"><img src="<?= wp_get_attachment_url($attachment_id) ?>" class="img-fluid" alt=""></a>
+										</div>
+									</div>
+						<?php
+								endif;
+								$number++;
+							}
+						endif; ?>
 					</div>
 					<!--Product Content End-->
 					<!--Product Tab Menu Start-->
 					<div class="product-small-image-list">
 						<div class="nav small-image-slider-single-product-tabstyle-3" role="tablist">
 
-							<div class="single-small-image img-full">
-								<a data-toggle="tab" id="product-slide-tab-1" href="#product-slide1"><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" class="img-fluid" alt=""></a>
-							</div>
+							<?php
+							if (empty($attachment_ids)) : ?>
+								<div class="single-small-image img-full">
+									<a data-toggle="tab" id="product-slide-tab-1" href="#product-slide1"><img src="<?= wp_get_attachment_url(get_post_thumbnail_id()) ?>" class="img-fluid" alt=""></a>
+								</div>
+								<?php
+							else :
+								$number = 1;
+								foreach ($attachment_ids as $attachment_id) { ?>
+									<div class="single-small-image img-full">
+										<a data-toggle="tab" id="product-slide-tab-<?= $number ?>" href="#product-slide<?= $number ?>"><img src="<?= wp_get_attachment_url($attachment_id) ?>" class="img-fluid" alt=""></a>
+									</div>
+							<?php
+									$number++;
+								}
+							endif; ?>
 
 						</div>
 					</div>
