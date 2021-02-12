@@ -19,7 +19,15 @@
 defined('ABSPATH') || exit;
 ?>
 <!-- Breadcrumb Area Start -->
-<?php require_once(dirname(__FILE__) . '/breadcrumb.php') ?>
+<?php
+/**
+ * Hook: woocommerce_before_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ * @hooked WC_Structured_Data::generate_website_data() - 30
+ */
+do_action('woocommerce_before_main_content'); ?>
 <!-- Breadcrumb Area End -->
 
 <div class="my-account-wrapper pt-120 pb-120">
@@ -60,7 +68,7 @@ defined('ABSPATH') || exit;
 								<!-- Single Tab Content End -->
 
 								<!-- Single Tab Content Start -->
-								<?=my_account_output_my_orders()?>
+								<?= my_account_output_my_orders() ?>
 								<!-- Single Tab Content End -->
 
 								<!-- Single Tab Content Start -->
@@ -82,7 +90,7 @@ defined('ABSPATH') || exit;
 								<!-- Single Tab Content End -->
 
 								<!-- Single Tab Content Start -->
-								<?=my_account_output_edit_account()?>
+								<?= my_account_output_edit_account() ?>
 								<!-- Single Tab Content End -->
 							</div>
 						</div> <!-- My Account Tab Content End -->
