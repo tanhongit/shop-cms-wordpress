@@ -32,3 +32,29 @@ https://stackoverflow.com/questions/27702915/how-to-get-woocommerce-product-gall
 
 How to get image title/alt attribute?
 https://wordpress.stackexchange.com/questions/193196/how-to-get-image-title-alt-attribute/330599
+
+-----------------------------
+THÊM TÍNH NĂNG BẮT BUỘC CÀI PLUGIN KHI KÍCH HOẠT THEME
+https://thachpham.com/wordpress/wordpress-development/tinh-nang-bat-buoc-cai-plugin-khi-kich-hoat-theme.html
+
+```
+function my_plugin_activation()
+{
+    $plugins = array(
+        // Gọi một plugin nào đó ở bên ngoài
+        array(
+            'name'               => 'TGM New Media Plugin', // Tên của plugin
+            'slug'               => 'tgm-new-media-plugin', // Tên thư mục plugin
+            'source'             => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // Link tải plugin - direct link
+            'required'           => true, // Nếu đặt là true thì plugin này sẽ không bắt buộc phải cài mà chỉ ở dạng Recommend.
+            'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // Nếu bạn cài plugin ở bên ngoài, không phải từ WordPress.Org thì thêm URL của trang plugin vào.
+        ),
+        // Gọi một plugin trong thư viện WordPress.org/plugins
+        array(
+            'name'      => 'BuddyPress',
+            'slug'      => 'buddypress', //Tên slug của plugin trên URL
+            'required'  => false,
+        ),
+    ); // end $plugins
+}
+```

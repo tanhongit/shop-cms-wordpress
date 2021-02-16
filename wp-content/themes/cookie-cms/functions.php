@@ -10,7 +10,7 @@ define('GET_TEMP_URL', get_template_directory_uri());
 define('GO_TO_HOME', home_url());
 
 require_once(CORE . '/init.php');
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 
 // Register apply woocommerce template
 add_action('after_setup_theme', 'woocommerce_support');
@@ -443,10 +443,10 @@ function woocommerce_output_product_description()
 // review single product
 add_action('output_review_before_comment_meta', 'woocommerce_review_display_rating', 10);
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-add_action( 'output_rating_products_for_product_detail', 'woocommerce_template_single_rating', 10 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+add_action('output_rating_products_for_product_detail', 'woocommerce_template_single_rating', 10);
 
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 
 /**
  * for my account.
@@ -473,7 +473,7 @@ function my_account_output_my_orders()
 }
 
 // // Edit amount related products output.
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 // // way 1
 // remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 // add_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
@@ -507,3 +507,69 @@ function cms_related_products_args($args)
 }
 
 
+/**
+ * TGM Plugin Activation.
+ */
+add_action('tgmpa_register', 'my_plugin_activation');
+function my_plugin_activation()
+{
+    $plugins = array(
+        array(
+            'name'      => 'WooCommerce',
+            'slug'      => 'woocommerce',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Google Ads & Marketing by Kliken',
+            'slug'      => 'kliken-marketing-for-google',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Jetpack by WordPress.com',
+            'slug'      => 'jetpack',
+            'required'  => false,
+        ),
+
+        array(
+            'name'      => 'WP-Sweep',
+            'slug'      => 'wp-sweep',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'All-in-One WP Migration',
+            'slug'      => 'all-in-one-wp-migration',
+            'required'  => true,
+        ),
+    ); // end $plugins
+
+    $config = array(
+        'default_path' => '',
+        'menu'         => 'tgmpa-install-plugins', // Menu slug.
+        'has_notices'  => true,                    // Có hiển thị thông báo hay không
+        'dismissable'  => true,                    // Nếu đặt false thì người dùng không thể hủy thông báo cho đến khi cài hết plugin.
+        'dismiss_msg'  => '',                      // Nếu 'dismissable' là false, thì tin nhắn ở đây sẽ hiển thị trên cùng trang Admin.
+        'is_automatic' => false,                   // Nếu là false thì plugin sẽ không tự động kích hoạt khi cài xong.
+        'message'      => '',
+        'strings'      => array(
+            'page_title'                      => __('Install Required Plugins', 'tgmpa'),
+            'menu_title'                      => __('Install Plugins', 'tgmpa'),
+            'installing'                      => __('Installing Plugin: %s', 'tgmpa'), // %s = plugin name.
+            'oops'                            => __('Something went wrong with the plugin API.', 'tgmpa'),
+            'notice_can_install_required'     => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.'), // %1$s = plugin name(s).
+            'notice_can_install_recommended'  => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.'), // %1$s = plugin name(s).
+            'notice_cannot_install'           => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.'), // %1$s = plugin name(s).
+            'notice_can_activate_required'    => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.'), // %1$s = plugin name(s).
+            'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.'), // %1$s = plugin name(s).
+            'notice_cannot_activate'          => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.'), // %1$s = plugin name(s).
+            'notice_ask_to_update'            => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.'), // %1$s = plugin name(s).
+            'notice_cannot_update'            => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.'), // %1$s = plugin name(s).
+            'install_link'                    => _n_noop('Begin installing plugin', 'Begin installing plugins'),
+            'activate_link'                   => _n_noop('Begin activating plugin', 'Begin activating plugins'),
+            'return'                          => __('Return to Required Plugins Installer', 'tgmpa'),
+            'plugin_activated'                => __('Plugin activated successfully.', 'tgmpa'),
+            'complete'                        => __('All plugins installed and activated successfully. %s', 'tgmpa'), // %s = dashboard link.
+            'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+        )
+    ); // end $config
+    tgmpa($plugins, $config);
+}
