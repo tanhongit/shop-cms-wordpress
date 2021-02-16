@@ -10,6 +10,7 @@ define('GET_TEMP_URL', get_template_directory_uri());
 define('GO_TO_HOME', home_url());
 
 require_once(CORE . '/init.php');
+require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
 // Register apply woocommerce template
 add_action('after_setup_theme', 'woocommerce_support');
