@@ -24,8 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h2 class="woocommerce-order-downloads__title"><?php esc_html_e( 'Downloads', 'woocommerce' ); ?></h2>
 	<?php endif; ?>
 
-	<table class="woocommerce-table woocommerce-table--order-downloads shop_table shop_table_responsive order_details">
-		<thead>
+	<table class="table table-bordered">
+		<thead class="thead-light">
 			<tr>
 				<?php foreach ( wc_get_account_downloads_columns() as $column_id => $column_name ) : ?>
 				<th class="<?php echo esc_attr( $column_id ); ?>"><span class="nobr"><?php echo esc_html( $column_name ); ?></span></th>
@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									}
 									break;
 								case 'download-file':
-									echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button alt">' . esc_html( $download['download_name'] ) . '</a>';
+									echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button alt"><i class="fa fa-cloud-download"></i> ' . esc_html( $download['download_name'] ) . '</a>';
 									break;
 								case 'download-remaining':
 									echo is_numeric( $download['downloads_remaining'] ) ? esc_html( $download['downloads_remaining'] ) : esc_html__( '&infin;', 'woocommerce' );
