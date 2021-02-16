@@ -44,9 +44,9 @@ if ( $show_downloads ) {
 
 	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
 
-	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+	<table class="table table-bordered">
 
-		<thead>
+		<thead class="thead-light">
 			<tr>
 				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
@@ -77,7 +77,7 @@ if ( $show_downloads ) {
 			?>
 		</tbody>
 
-		<tfoot>
+		<tfoot style="font-weight: bold;">
 			<?php
 			foreach ( $order->get_order_item_totals() as $key => $total ) {
 				?>
