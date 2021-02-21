@@ -574,6 +574,25 @@ function my_plugin_activation()
     tgmpa($plugins, $config);
 }
 
+// -------------------------------------------------------------------------------------------------
+//version wordpress hidden
+function wpb_remove_version()
+{
+    return '';
+}
+add_filter('the_generator', 'wpb_remove_version');
+
+//Footer in Admin WordPress
+function remove_footer_admin()
+{
+
+    echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Dev Tutorials: <a href="https://tanhongit.com" target="_blank">tanhongit.com</a></p>';
+}
+
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+// -------------------------------------------------------------------------------------------------
+
 
 /** Forms */
 
@@ -817,9 +836,3 @@ if (!function_exists('woocommerce_form_field')) {
         }
     }
 }
-
-function wpb_remove_version()
-{
-    return '';
-}
-add_filter('the_generator', 'wpb_remove_version');
