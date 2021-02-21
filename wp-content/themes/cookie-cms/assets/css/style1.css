@@ -7310,7 +7310,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         text-transform: capitalize;
         display: block;
         margin: 0 0 5px; }
-      .myaccount-content .account-details-form .single-input-item input {
+      .myaccount-content .account-details-form .single-input-item input, .myaccount-content .account-details-form .single-input-item select {
         border: 1px solid #e8e8e8;
         height: 50px;
         background-color: transparent;
@@ -7318,7 +7318,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         color: #1f2226;
         font-size: 13px;
         width: 100%; }
-        .myaccount-content .account-details-form .single-input-item input:focus {
+        .myaccount-content .account-details-form .single-input-item input:focus, .myaccount-content .account-details-form .single-input-item select:focus {
           border: 1px solid #343538; }
       .myaccount-content .account-details-form .single-input-item button {
         border: none;
