@@ -30,8 +30,9 @@ defined('ABSPATH') || exit;
 					<span><?php esc_html_e('Subtotal', 'woocommerce'); ?></span>
 					<span class="c-total-price"><?php wc_cart_totals_subtotal_html(); ?></span>
 				</div>
-				<hr>
 
+				<?php !empty(WC()->cart->get_coupons()) ? $hr = '<hr>' : $hr = '';
+				echo $hr;?>
 				<?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
 					<div class="single-total-content d-flex justify-content-between">
 						<span><?php wc_cart_totals_coupon_label($coupon); ?></span>
