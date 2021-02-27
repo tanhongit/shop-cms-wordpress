@@ -1,0 +1,46 @@
+
+---Upload files---
+Redux file was not uploaded. Error: Specified file failed upload test.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 120
+Files info:
+Site URL = http://localhost/shop-cms-wordpress
+Data file = C:\wamp64\www\shop-cms-wordpress/wp-content/uploads/2021/02/teamcms.WordPress.2021-02-27-1.xml
+Widget file = C:\wamp64\www\shop-cms-wordpress/wp-content/uploads/2021/02/localhost-shop-cms-wordpress-widgets-1.wie
+Customizer file = C:\wamp64\www\shop-cms-wordpress/wp-content/uploads/2021/02/cookie-cms-export-1.dat
+Redux files:
+not defined!
+
+---Importing widgets---
+Hero Area : 
+
+Custom HTML - No Title - Widget already exists
+
+Banner Four Area : 
+
+Custom HTML - No Title - Widget already exists
+
+Footer Sidebar 1 : 
+
+Image - No Title - Widget already exists
+Custom HTML - No Title - Widget already exists
+
+Footer Sidebar 2 : 
+
+Categories - No Title - Widget already exists
+
+Footer Sidebar 3 : 
+
+Audio - Superstar - Widget already exists
+Audio - Yesterday Once More - Widget already exists
+
+Footer Sidebar 4 : 
+
+Gallery - Gallery Review Image - Widget already exists
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
