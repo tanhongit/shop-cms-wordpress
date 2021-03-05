@@ -32,20 +32,21 @@ defined('ABSPATH') || exit;
 				</div>
 
 				<?php !empty(WC()->cart->get_coupons()) ? $hr = '<hr>' : $hr = '';
-				echo $hr;?>
+				echo $hr; ?>
 				<?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
 					<div class="single-total-content d-flex justify-content-between">
 						<span><?php wc_cart_totals_coupon_label($coupon); ?></span>
 						<span class="c-total-price"><?php wc_cart_totals_coupon_html($coupon); ?></span>
 					</div>
 				<?php endforeach; ?>
-				<hr>
 
 				<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
+					<hr>
 					<?php do_action('woocommerce_cart_totals_before_shipping'); ?>
 					<?php wc_cart_totals_shipping_html(); ?>
 					<?php do_action('woocommerce_cart_totals_after_shipping'); ?>
 				<?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) : ?>
+					<hr>
 					<div class="single-total-content d-flex justify-content-between">
 						<span><?php esc_html_e('Shipping', 'woocommerce'); ?></span>
 						<span class="c-total-price"><?php woocommerce_shipping_calculator(); ?></span>
