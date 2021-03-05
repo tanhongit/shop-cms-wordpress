@@ -91,26 +91,6 @@ function ai1wm_archive_path( $params ) {
 }
 
 /**
- * Get export log absolute path
- *
- * @param  array  $params Request parameters
- * @return string
- */
-function ai1wm_export_path( $params ) {
-	return ai1wm_storage_path( $params ) . DIRECTORY_SEPARATOR . AI1WM_EXPORT_NAME;
-}
-
-/**
- * Get import log absolute path
- *
- * @param  array  $params Request parameters
- * @return string
- */
-function ai1wm_import_path( $params ) {
-	return ai1wm_storage_path( $params ) . DIRECTORY_SEPARATOR . AI1WM_IMPORT_NAME;
-}
-
-/**
  * Get multipart.list absolute path
  *
  * @param  array  $params Request parameters
