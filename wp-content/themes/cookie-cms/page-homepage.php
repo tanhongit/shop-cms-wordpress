@@ -26,5 +26,7 @@ else :
 endif; ?>
 <!-- Protuct Area End -->
 
+<?= dynamic_sidebar('banner-area-fruits') ?>
+
 <!-- footer -->
 <?php get_footer(); ?>

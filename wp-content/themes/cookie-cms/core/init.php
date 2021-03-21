@@ -123,6 +123,16 @@ if (!function_exists('tnt_theme_setup')) {
             'after_title' => '</h3>',
         ));
 
+        register_sidebar(array(
+            'name' => 'Banner Area Fruits',
+            'id' => 'banner-area-fruits',
+            'description' => 'Banner Four Area - Appears after Protuct Area',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+
         /*
         * Tạo sidebar cho theme
         */
