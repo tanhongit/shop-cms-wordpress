@@ -28,3 +28,8 @@ The theme the team implements is called cms-cookie and includes as follows:
 - Save invoices that users have posted and have the function to review each invoice in detail.
 - Edit shipping address, view, or edit information for each logged-in user.
 
+# 4. Download Database
+
+This is the path to the database file for you to download: [`/admin/database/***.sql`](https://github.com/TanHongIT/shop-cms-wordpress/tree/main/database)
+
+Create a new database on **PHPMyAdmin** at your server, then import the .sql file that you just downloaded.
